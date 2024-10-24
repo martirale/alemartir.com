@@ -20,7 +20,7 @@ export async function generateMetadata() {
             url: "https://alemartir.com/alemartir-cover.webp",
             width: 1200,
             height: 630,
-            alt: "${sitename}",
+            alt: `${sitename}`,
           },
         ],
       },
