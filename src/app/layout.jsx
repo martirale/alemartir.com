@@ -36,8 +36,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>
-        <main>{children}</main>
+      <body className="bg-yellow text-black custom-vh">
+        <main className="w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto pt-24 md:pt-28">
+          {children}
+        </main>
       </body>
     </html>
   );
