@@ -74,10 +74,10 @@ export default function ContentRenderer({ blocks }) {
             alt={block.image.alternativeText || ""}
             width={width}
             height={height}
-            className="w-full h-auto rounded-2xl mb-2 border border-black dark:border-yellow md:rounded-3xl"
+            className="w-full h-auto rounded-2xl mb-2 border border-black md:rounded-3xl"
           />
           {block.image.caption && (
-            <figcaption className="text-xs text-center text-black md:px-24 dark:text-yellow">
+            <figcaption className="text-xs text-center text-black md:px-24">
               <FontAwesomeIcon icon={faCircleInfo} className="mr-1 w-3 h-3" />
               {block.image.caption}
             </figcaption>
@@ -101,7 +101,7 @@ export default function ContentRenderer({ blocks }) {
       return (
         <blockquote
           key={index}
-          className="rounded-2xl border border-black text-xl text-center italic p-4 my-8 dark:border-yellow md:p-8 md:rounded-3xl"
+          className="rounded-2xl border border-black text-xl text-center italic p-4 my-8 md:p-8 md:rounded-3xl"
         >
           <FontAwesomeIcon icon={faQuoteLeft} className="mr-2 w-7 h-7" />
           {formatText(block.children)}
