@@ -20,3 +20,9 @@ html {
 h1 {
   display: none;
 }
+
+.custom-vh {
+  min-height: 100vh;
+  display: grid;
+  align-content: space-between;
+}
