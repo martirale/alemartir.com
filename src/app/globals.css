@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* MISC */
+::selection {
+  background: #000000;
+  color: #ffff00;
+}
+
+.inverse-select ::selection {
+  background: #ffff00;
+  color: #000000;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  display: none;
+}
