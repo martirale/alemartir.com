@@ -63,7 +63,7 @@ export default async function TermsPage() {
         <h1>{title}</h1>
 
         <section className="flex justify-center">
-          <div className="flex flex-col w-full md:w-8/12">
+          <div className="flex flex-col w-full md:w-6/12">
             <div>
               <h2 className="font-extrabold text-5xl pb-16 md:text-7xl">
                 {title}
