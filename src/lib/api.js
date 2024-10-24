@@ -25,13 +25,13 @@ const fetchAPI = async (endpoint, options = {}) => {
 
 // METADATA GLOBAL
 export const getGlobal = async () => {
-  const dataAbout = await fetchAPI(
+  const dataGlobal = await fetchAPI(
     "/api/global?fields[0]=sitename&fields[1]=description",
     {
       cache: "no-store",
     }
   );
-  return dataAbout.data;
+  return dataGlobal.data;
 };
 
 // ABOUT PAGE
@@ -48,7 +48,10 @@ export const getAbout = async () => {
 // PRIVACY PAGE
 export const getPrivacy = async () => {
   const dataPrivacy = await fetchAPI(
-    "/api/privacy?fields[0]=title&fields[1]=date&fields[2]=content"
+    "/api/privacy?fields[0]=title&fields[1]=date&fields[2]=content",
+    {
+      cache: "no-store",
+    }
   );
   return dataPrivacy.data;
 };
