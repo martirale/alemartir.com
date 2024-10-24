@@ -13,7 +13,7 @@ const headingClasses = {
   6: "text-xl",
 };
 
-export default function ContentRenderer({ blocks }) {
+export function ContentRenderer({ blocks }) {
   const formatText = (children) => {
     return children.map((child, index) => {
       if (child.type === "text") {
@@ -125,3 +125,5 @@ export default function ContentRenderer({ blocks }) {
     return null;
   });
 }
+
+export default ContentRenderer;
