@@ -55,3 +55,14 @@ export const getPrivacy = async () => {
   );
   return dataPrivacy.data;
 };
+
+// TERMS PAGE
+export const getTerms = async () => {
+  const dataTerms = await fetchAPI(
+    "/api/terms-of-use?fields[0]=title&fields[1]=date&fields[2]=content",
+    {
+      cache: "no-store",
+    }
+  );
+  return dataTerms.data;
+};
