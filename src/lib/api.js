@@ -26,7 +26,10 @@ const fetchAPI = async (endpoint, options = {}) => {
 // ABOUT PAGE
 export const getAbout = async () => {
   const dataAbout = await fetchAPI(
-    "/api/about?fields[0]=title&fields[1]=description&fields[2]=email&fields[3]=phone&populate[profile][fields][0]=url"
+    "/api/about?fields[0]=title&fields[1]=description&fields[2]=email&fields[3]=phone&populate[profile][fields][0]=url",
+    {
+      cache: "no-store",
+    }
   );
   return dataAbout.data;
 };
