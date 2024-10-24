@@ -4,8 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: process.env.LOCALHOST_HOSTNAME,
-        port: process.env.LOCALHOST_PORT,
+        hostname: process.env.LOCALHOST_HOST_BACKEND,
+        port: process.env.LOCALHOST_PORT_BACKEND,
         pathname: "/uploads/**",
       },
       {
