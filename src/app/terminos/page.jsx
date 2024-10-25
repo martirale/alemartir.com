@@ -59,27 +59,29 @@ export default async function TermsPage() {
       : "Fecha no disponible";
 
     return (
-      <div className="mt-4">
+      <>
         <h1>{title}</h1>
 
-        <section className="flex justify-center">
-          <div className="flex flex-col w-full md:w-6/12">
-            <div>
-              <h2 className="font-extrabold text-5xl pb-16 md:text-7xl">
-                {title}
-              </h2>
+        <div className="flex flex-col md:flex-row w-full">
+          <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
+            <div className="px-4 py-8">
+              <h2>{title}</h2>
 
-              <div className="bg-black text-yellow mb-8 py-1 px-5 text-xs rounded-full inline-block">
+              <div className="bg-black text-yellow mt-8 py-1 px-5 text-xs rounded-full inline-block">
                 <p className="font-bold uppercase">
                   Actualizado: {formattedDate}
                 </p>
               </div>
+            </div>
+          </section>
 
+          <section className="flex-1 md:flex-[50%]">
+            <div className="p-4 md:py-8">
               <ContentRenderer blocks={content} />
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </>
     );
   } catch (error) {
     console.error("Error fetching data:", error);

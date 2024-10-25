@@ -31,7 +31,7 @@ export default function NotFound() {
 
         <div className="flex-1 md:flex-[50%]">
           <div className="flex items-center justify-center px-4">
-            <p className="text-2xl text-center py-16 md:py-32 md:mt-4">
+            <p className="text-2xl text-center py-16 md:py-32 md:mt-7">
               Lo siento, pero parece que la página no existe...
             </p>
           </div>
