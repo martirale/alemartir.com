@@ -9,7 +9,7 @@ export const menuOptions = [
   },
   {
     name: "Trabajos",
-    url: "/portafolio",
+    url: "/trabajos",
     showHeader: true,
     showFooter: true,
     showMisc: false,
