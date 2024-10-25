@@ -66,3 +66,24 @@ export const getTerms = async () => {
   );
   return dataTerms.data;
 };
+
+// WORKS INDEX
+export const getWorks = async () => {
+  const dataWorks = await fetchAPI(
+    "/api/works?fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=discipline&populate[cover][fields][0]=url&sort[0]=publishedAt:desc",
+    {
+      cache: "no-store",
+    }
+  );
+  return dataWorks.data;
+};
+
+export const getWorkBySlug = async () => {
+  const dataWorkBySlug = await fetchAPI(
+    "/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=discipline&fields[7]=creative&fields[8]=strategy&fields[9]=lead&fields[10]=design&fields[11]=copywriting&fields[12]=illustration&fields[13]=animation&fields[14]=photo&fields[15]=team&fields[16]=description",
+    {
+      cache: "no-store",
+    }
+  );
+  return dataWorkBySlug.data;
+};
