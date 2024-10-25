@@ -1,7 +1,11 @@
 import React from "react";
 import { getGlobal, getAbout } from "@lib/api";
 import Image from "next/image";
+import Link from "next/link";
 import ContentRenderer from "@ui/ContentRenderer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export async function generateMetadata() {
   try {
@@ -75,6 +79,41 @@ export default async function AboutPage() {
 
           {/* CONTACT FORM */}
           <section className="flex-1"></section>
+        </div>
+
+        {/* OTHER CONTACTS */}
+        <div className="flex flex-col md:flex-row w-full items-center p-8 bg-black text-yellow">
+          <div className="flex-1 text-center mb-8 md:mb-0">
+            <h3 className="text-xl uppercase">Otras formas de contacto:</h3>
+          </div>
+
+          <div className="flex-1 text-center mb-2 md:mb-0">
+            <Link
+              href="mailto:hola@alemartir.com"
+              className="text-xl uppercase hover:underline"
+            >
+              <FontAwesomeIcon
+                icon={faEnvelopeOpen}
+                className="w-4 h-4 mr-2 align-baseline"
+              />
+              Correo
+            </Link>
+          </div>
+
+          <div className="flex-1 text-center">
+            <Link
+              href="https://wa.me/message/ZW5NRUU3HCGUO1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl uppercase hover:underline"
+            >
+              <FontAwesomeIcon
+                icon={faWhatsapp}
+                className="w-5 h-5 mr-2 align-middle"
+              />
+              WhatsApp
+            </Link>
+          </div>
         </div>
       </>
     );
