@@ -10,7 +10,7 @@ export default function FooterBrand() {
           <MonoAM className="fill-black w-[149px] h-[72px]" />
         </Link>
 
-        <p className="uppercase">
+        <p className="uppercase text-base md:text-sm">
           Diseñador gráfico publicitario y creador de contenido digital para
           redes sociales
         </p>
