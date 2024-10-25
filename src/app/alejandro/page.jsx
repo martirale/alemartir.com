@@ -82,7 +82,7 @@ export default async function AboutPage() {
         </div>
 
         {/* OTHER CONTACTS */}
-        <div className="flex flex-col md:flex-row w-full items-center p-8 bg-black text-yellow">
+        <div className="flex flex-col md:flex-row w-full items-center p-8 bg-black text-yellow inverse-select">
           <div className="flex-1 text-center mb-8 md:mb-0">
             <h3 className="text-xl uppercase">Otras formas de contacto:</h3>
           </div>
