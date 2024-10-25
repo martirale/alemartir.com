@@ -72,7 +72,7 @@ export default async function AboutPage() {
               />
             </div>
 
-            <div className="px-4 py-8 md:p-8">
+            <div className="px-4 py-8">
               <ContentRenderer blocks={description} />
             </div>
           </section>

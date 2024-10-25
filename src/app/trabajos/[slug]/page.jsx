@@ -79,14 +79,14 @@ export default async function WorkPage({ params }) {
 
           {/* DESCRIPTION */}
           <section className="flex-1 md:flex-[25%] border-b md:border-r md:border-b-0">
-            <div className="px-4 py-8 md:p-8">
+            <div className="px-4 py-8">
               <ContentRenderer blocks={description} />
             </div>
           </section>
 
           {/* PROJECT INFO */}
           <section className="flex-1 md:flex-[25%]">
-            <div className="px-4 py-8 md:p-8">
+            <div className="px-4 py-8">
               <ul>
                 {client && (
                   <li>
