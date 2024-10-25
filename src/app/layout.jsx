@@ -2,6 +2,7 @@ import React from "react";
 import "./globals.css";
 import { getGlobal } from "@lib/api";
 import Header from "@ui/header/Header";
+import Footer from "@ui/footer/Footer";
 
 export async function generateMetadata() {
   try {
@@ -48,9 +49,12 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className="bg-yellow text-black custom-vh">
         <Header />
+
         <main className="w-full mx-auto pt-[75px]">
           <div className="px-4 md:px-0">{children}</div>
         </main>
+
+        <Footer />
       </body>
     </html>
   );
