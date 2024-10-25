@@ -30,7 +30,7 @@ export default function Navbar() {
         "top-[75px]",
         "left-0",
         "pl-4",
-        "py-5",
+        "py-4",
       ];
     } else {
       menuClasses = ["hidden", "md:flex"];
@@ -53,7 +53,9 @@ export default function Navbar() {
             <Link
               key={option.name}
               href={option.url}
-              className="uppercase text-4xl md:text-2xl hover:underline"
+              target={option.target}
+              rel="noopener noreferrer"
+              className="uppercase text-3xl md:text-2xl hover:underline my-2 md:ml-8 md:my-0"
             >
               {option.name}
             </Link>

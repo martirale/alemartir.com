@@ -12,7 +12,9 @@ export default function FooterMisc() {
           <Link
             key={option.name}
             href={option.url}
-            className="uppercase hover:underline"
+            target={option.target}
+            rel="noopener noreferrer"
+            className="uppercase text-xl md:text-base mb-2 hover:underline"
           >
             {option.name}
           </Link>
