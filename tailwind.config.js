@@ -12,6 +12,9 @@ module.exports = {
       black: "#000000",
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-montserrat)"],
+      },
       fontSize: {
         base: "18px",
       },

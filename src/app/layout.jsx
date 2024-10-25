@@ -3,6 +3,12 @@ import "./globals.css";
 import { getGlobal } from "@lib/api";
 import Header from "@ui/header/Header";
 import Footer from "@ui/footer/Footer";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export async function generateMetadata() {
   try {
@@ -46,7 +52,7 @@ export async function generateMetadata() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className={montserrat.className}>
       <body className="bg-yellow text-black custom-vh">
         <Header />
 
