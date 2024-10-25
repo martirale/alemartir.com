@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-// import MonogramAM from "@logos/MonogramAM";
+import MonoAM from "@logos/MonoAM";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -26,11 +26,10 @@ export default function Navbar() {
         "text-yellow",
         "w-full",
         "flex-col",
-        "top-[81px]",
+        "top-[75px]",
         "left-0",
-        "px-2",
+        "pl-4",
         "py-5",
-        "gap-5",
       ];
     } else {
       menuClasses = ["hidden", "md:flex"];
@@ -48,10 +47,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="md:p-0 md:flex md:justify-between md:items-center">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav>
+      <div className="mx-auto flex justify-between items-center">
         <Link href="/">
-          {/* <MonogramAM className="fill-black w-[48px] h-[48px] md:w-[54px] md:h-[54px]" /> */}
+          <MonoAM className="fill-black w-[99px] h-[48px]" />
         </Link>
 
         <div className={getMenuClasses()}>
@@ -59,9 +58,9 @@ export default function Navbar() {
             <Link
               key={button.name}
               href={button.url}
-              className="text-5xl mx-2 hover:underline md:pl-4"
+              className="text-4xl md:text-3xl hover:underline"
             >
-              <span>{button.name}</span>
+              {button.name}
             </Link>
           ))}
         </div>

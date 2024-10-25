@@ -59,7 +59,7 @@ export default async function PrivacyPage() {
       : "Fecha no disponible";
 
     return (
-      <>
+      <div className="mt-4">
         <h1>{title}</h1>
 
         <section className="flex justify-center">
@@ -69,11 +69,7 @@ export default async function PrivacyPage() {
                 {title}
               </h2>
 
-              <div
-                href="/patrocinado"
-                target="_blank"
-                className="bg-black text-yellow mb-8 py-1 px-5 text-xs rounded-full inline-block"
-              >
+              <div className="bg-black text-yellow mb-8 py-1 px-5 text-xs rounded-full inline-block">
                 <p className="font-bold uppercase">
                   Actualizado: {formattedDate}
                 </p>
@@ -83,7 +79,7 @@ export default async function PrivacyPage() {
             </div>
           </div>
         </section>
-      </>
+      </div>
     );
   } catch (error) {
     console.error("Error fetching data:", error);

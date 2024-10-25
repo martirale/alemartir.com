@@ -48,8 +48,8 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className="bg-yellow text-black custom-vh">
         <Header />
-        <main className="w-full max-w-xl md:max-w-3xl lg:max-w-screen-2xl mx-auto pt-24 md:pt-28">
-          <div className="container mx-auto px-4 py-2 md:px-0">{children}</div>
+        <main className="w-full mx-auto pt-[75px]">
+          <div className="px-4 md:px-0">{children}</div>
         </main>
       </body>
     </html>
