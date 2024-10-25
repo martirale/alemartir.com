@@ -1,14 +1,13 @@
 import React from "react";
-import { getGlobal, getAbout } from "@lib/api";
-import Image from "next/image";
+import { getGlobal, getWorkBySlug } from "@lib/api";
 import ContentRenderer from "@ui/ContentRenderer";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }) {
   try {
     const globalData = await getGlobal();
     const { sitename, description } = globalData;
-    const aboutData = await getAbout();
-    const { title } = aboutData;
+    const workData = await getWorkBySlug(params.slug);
+    const { title, slug } = workData;
 
     if (!title) {
       return undefined;
@@ -20,7 +19,7 @@ export async function generateMetadata() {
       openGraph: {
         title: `${title} | ${sitename}`,
         description: `${description}`,
-        url: "https://alemartir.com/trabajos",
+        url: `https://alemartir.com/trabajos/${slug}`,
         type: "website",
         images: [
           {
@@ -37,7 +36,7 @@ export async function generateMetadata() {
         description: `${description}`,
         images: ["https://alemartir.com/alemartir-cover.webp"],
       },
-      canonical: "https://alemartir.com/trabajos",
+      canonical: `https://alemartir.com/trabajos/${slug}`,
     };
   } catch (error) {
     console.error("Error fetching works content:", error);
@@ -46,11 +45,28 @@ export async function generateMetadata() {
   }
 }
 
-export default async function WorkPage() {
+export default async function WorkPage({ params }) {
   try {
-    const aboutData = await getAbout();
+    const work = await getWorkBySlug(params.slug);
 
-    const { title, description, profile } = aboutData;
+    const {
+      title,
+      description,
+      client,
+      campaign,
+      agency,
+      country,
+      discipline,
+      creative,
+      strategy,
+      lead,
+      design,
+      copywriting,
+      illustration,
+      animation,
+      photo,
+      team,
+    } = work;
     return (
       <>
         <h1>{title}</h1>
@@ -58,14 +74,7 @@ export default async function WorkPage() {
         <div className="flex flex-col md:flex-row w-full">
           {/* MEDIA CONTENT */}
           <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
-            <div className="w-full">
-              <Image
-                src={`${process.env.STRAPI_API_URL}${profile.url}`}
-                alt={profile.url}
-                width={1920}
-                height={1080}
-              />
-            </div>
+            <p>Lorem ipsum.</p>
           </section>
 
           {/* DESCRIPTION */}
@@ -78,7 +87,82 @@ export default async function WorkPage() {
           {/* PROJECT INFO */}
           <section className="flex-1 md:flex-[25%]">
             <div className="px-4 py-8 md:p-8">
-              <ContentRenderer blocks={description} />
+              <ul>
+                {client && (
+                  <li>
+                    <span className="font-bold">Cliente:</span> {client}
+                  </li>
+                )}
+                {campaign && (
+                  <li>
+                    <span className="font-bold">Campaña:</span> {campaign}
+                  </li>
+                )}
+                {agency && (
+                  <li>
+                    <span className="font-bold">Agencia:</span> {agency}
+                  </li>
+                )}
+                {country && (
+                  <li>
+                    <span className="font-bold">País:</span> {country}
+                  </li>
+                )}
+                {discipline && (
+                  <li>
+                    <span className="font-bold">Disciplina:</span> {discipline}
+                  </li>
+                )}
+                {creative && (
+                  <li>
+                    <span className="font-bold">Dirección creativa:</span>{" "}
+                    {creative}
+                  </li>
+                )}
+                {strategy && (
+                  <li>
+                    <span className="font-bold">Estrategia:</span> {strategy}
+                  </li>
+                )}
+                {lead && (
+                  <li>
+                    <span className="font-bold">Diseñador principal:</span>{" "}
+                    {lead}
+                  </li>
+                )}
+                {design && (
+                  <li>
+                    <span className="font-bold">Diseño:</span> {design}
+                  </li>
+                )}
+                {copywriting && (
+                  <li>
+                    <span className="font-bold">Copywriting:</span>{" "}
+                    {copywriting}
+                  </li>
+                )}
+                {illustration && (
+                  <li>
+                    <span className="font-bold">Ilustración:</span>{" "}
+                    {illustration}
+                  </li>
+                )}
+                {animation && (
+                  <li>
+                    <span className="font-bold">Animación:</span> {animation}
+                  </li>
+                )}
+                {photo && (
+                  <li>
+                    <span className="font-bold">Fotografía:</span> {photo}
+                  </li>
+                )}
+                {team && (
+                  <li>
+                    <span className="font-bold">Equipo de trabajo:</span> {team}
+                  </li>
+                )}
+              </ul>
             </div>
           </section>
         </div>
