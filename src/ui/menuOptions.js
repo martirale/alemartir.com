@@ -24,11 +24,19 @@ export const menuOptions = [
     target: "_self",
   },
   {
-    name: "Contacto",
-    url: "/contacto",
+    name: "Podcast",
+    url: "/podcast",
     showHeader: true,
     showFooter: true,
     showMisc: false,
+    target: "_self",
+  },
+  {
+    name: "Contacto",
+    url: "/contacto",
+    showHeader: true,
+    showFooter: false,
+    showMisc: true,
     target: "_self",
   },
   {
