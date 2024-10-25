@@ -33,7 +33,7 @@ export const menuOptions = [
   },
   {
     name: "Contacto",
-    url: "/contacto",
+    url: "/alejandro",
     showHeader: true,
     showFooter: false,
     showMisc: true,
