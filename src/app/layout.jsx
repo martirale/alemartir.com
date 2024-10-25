@@ -50,9 +50,7 @@ export default function RootLayout({ children }) {
       <body className="bg-yellow text-black custom-vh">
         <Header />
 
-        <main className="w-full mx-auto pt-[75px]">
-          <div className="px-4 md:px-0">{children}</div>
-        </main>
+        <main className="w-full mx-auto pt-[75px]">{children}</main>
 
         <Footer />
       </body>
