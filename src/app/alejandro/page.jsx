@@ -61,7 +61,7 @@ export default async function AboutPage() {
 
         <div className="flex flex-col md:flex-row w-full">
           {/* ABOUT CONTENT */}
-          <section className="flex-1 border-b md:border-r md:border-b-0">
+          <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
             <div className="w-full aspect-w-1 aspect-h-1 border-b">
               <Image
                 src={`${process.env.STRAPI_API_URL}${profile.url}`}
@@ -78,7 +78,7 @@ export default async function AboutPage() {
           </section>
 
           {/* SECOND SECTION */}
-          <section className="flex-1"></section>
+          <section className="flex-1 md:flex-[50%]"></section>
         </div>
 
         {/* CONTACTS */}
@@ -88,10 +88,7 @@ export default async function AboutPage() {
           </div>
 
           <div className="flex-1 text-center mb-2 md:mb-0">
-            <Link
-              href="mailto:hola@alemartir.com"
-              className="text-xl uppercase hover:underline"
-            >
+            <Link href={email} className="text-xl uppercase hover:underline">
               <FontAwesomeIcon
                 icon={faEnvelopeOpen}
                 className="w-4 h-4 mr-2 align-baseline"
@@ -102,7 +99,7 @@ export default async function AboutPage() {
 
           <div className="flex-1 text-center">
             <Link
-              href="https://wa.me/message/ZW5NRUU3HCGUO1"
+              href={phone}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xl uppercase hover:underline"
