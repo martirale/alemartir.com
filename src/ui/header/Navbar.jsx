@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { menuOptions } from "@ui/menuOptions";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,13 +39,7 @@ export default function Navbar() {
     return menuClasses.join(" ");
   }
 
-  // MENU LINKS
-  const buttons = [
-    {
-      name: "Inicio",
-      url: "/",
-    },
-  ];
+  const footerOptions = menuOptions.filter((option) => option.showHeader);
 
   return (
     <nav>
@@ -54,13 +49,13 @@ export default function Navbar() {
         </Link>
 
         <div className={getMenuClasses()}>
-          {buttons.map((button) => (
+          {footerOptions.map((option) => (
             <Link
-              key={button.name}
-              href={button.url}
-              className="text-4xl md:text-3xl hover:underline"
+              key={option.name}
+              href={option.url}
+              className="uppercase text-4xl md:text-2xl hover:underline"
             >
-              {button.name}
+              {option.name}
             </Link>
           ))}
         </div>
