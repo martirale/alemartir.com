@@ -1,5 +1,6 @@
 import React from "react";
 import { getGlobal, getWorkBySlug } from "@lib/api";
+import Image from "next/image";
 import ContentRenderer from "@ui/ContentRenderer";
 
 export async function generateMetadata({ params }) {
@@ -66,6 +67,7 @@ export default async function WorkPage({ params }) {
       animation,
       photo,
       team,
+      images,
     } = work;
     return (
       <>
@@ -80,7 +82,17 @@ export default async function WorkPage({ params }) {
         <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)]">
           {/* MEDIA CONTENT */}
           <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
-            <p>Lorem ipsum.</p>
+            {images.map((image) => (
+              <div key={image.id} className="w-full">
+                <Image
+                  src={`${process.env.STRAPI_API_URL}${image.url}`}
+                  alt={image.alternativeText}
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto"
+                />
+              </div>
+            ))}
           </section>
 
           {/* DESCRIPTION */}
