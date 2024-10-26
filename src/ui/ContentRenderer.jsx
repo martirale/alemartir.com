@@ -5,12 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const headingClasses = {
-  1: "text-7xl",
-  2: "text-5xl",
-  3: "text-3xl",
-  4: "text-2xl",
-  5: "text-xl",
-  6: "text-xl",
+  2: "text-3xl",
+  3: "text-2xl",
+  4: "text-xl",
+  5: "text-lg",
 };
 
 export function ContentRenderer({ blocks }) {
@@ -89,10 +87,7 @@ export function ContentRenderer({ blocks }) {
       const HeadingTag = `h${block.level}`;
       const headingClass = headingClasses[block.level] || "text-xl";
       return (
-        <HeadingTag
-          key={index}
-          className={`${headingClass} font-extrabold mt-12 mb-4`}
-        >
+        <HeadingTag key={index} className={`${headingClass} mt-8`}>
           {formatText(block.children)}
         </HeadingTag>
       );
