@@ -67,7 +67,7 @@ export default async function TermsPage() {
         <div className="flex flex-col md:flex-row w-full">
           <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
             <div className="px-4 py-8">
-              <h2>{title}</h2>
+              <h2 className="text-4xl md:text-5xl">{title}</h2>
 
               <div
                 className="bg-black text-yellow mt-8 py-1 px-5 text-xs rounded-full inline-block"
