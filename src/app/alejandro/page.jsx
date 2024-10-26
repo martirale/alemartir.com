@@ -60,9 +60,8 @@ export default async function AboutPage() {
         <h1>{title}</h1>
 
         <div className="flex flex-col md:flex-row w-full">
-          {/* ABOUT CONTENT */}
           <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
-            <div className="w-full aspect-w-1 aspect-h-1 border-b">
+            <div className="w-full aspect-w-1 aspect-h-1">
               <Image
                 src={`${process.env.STRAPI_API_URL}${profile.url}`}
                 alt={profile.url}
@@ -71,14 +70,18 @@ export default async function AboutPage() {
                 className="w-full h-full object-cover"
               />
             </div>
+          </section>
+
+          {/* ABOUT CONTENT */}
+          <section className="flex-1 md:flex-[50%]">
+            <div className="flex w-full items-center justify-center p-4 border-b">
+              <h2 className="text-center">Alejandro Mártir</h2>
+            </div>
 
             <div className="px-4 py-8">
               <ContentRenderer blocks={description} />
             </div>
           </section>
-
-          {/* SECOND SECTION */}
-          <section className="flex-1 md:flex-[50%]"></section>
         </div>
 
         {/* CONTACTS */}
