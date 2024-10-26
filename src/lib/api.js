@@ -68,7 +68,7 @@ export const getTerms = async () => {
 };
 
 // WORKS INDEX
-export const getWorks = async (page = 1, pageSize = 18) => {
+export const getWorks = async (page = 1, pageSize = 12) => {
   const dataWorks = await fetchAPI(
     `/api/works?fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=discipline&populate[cover][fields][0]=url&sort[0]=publishedAt:desc&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
     {
