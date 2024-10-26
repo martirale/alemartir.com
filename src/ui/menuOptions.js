@@ -32,7 +32,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
-    name: "Contacto",
+    name: "Ale",
     url: "/alejandro",
     showHeader: true,
     showFooter: false,
