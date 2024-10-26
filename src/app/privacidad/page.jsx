@@ -1,6 +1,8 @@
 import React from "react";
 import { getGlobal, getPrivacy } from "@lib/api";
 import ContentRenderer from "@ui/ContentRenderer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
 
 export async function generateMetadata() {
   try {
@@ -67,9 +69,13 @@ export default async function PrivacyPage() {
             <div className="px-4 py-8">
               <h2>{title}</h2>
 
-              <div className="bg-black text-yellow mt-8 py-1 px-5 text-xs rounded-full inline-block">
-                <p className="font-bold uppercase">
-                  Actualizado: {formattedDate}
+              <div
+                className="bg-black text-yellow mt-8 py-1 px-5 text-xs rounded-full inline-block"
+                title={`Política actualizada el ${formattedDate}`}
+              >
+                <p className="uppercase">
+                  <FontAwesomeIcon icon={faRotate} className="w-3 h-3 mr-2" />
+                  {formattedDate}
                 </p>
               </div>
             </div>
