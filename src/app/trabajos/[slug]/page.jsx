@@ -81,7 +81,7 @@ export default async function WorkPage({ params }) {
 
         <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)]">
           {/* MEDIA CONTENT */}
-          <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
+          <section className="flex-1 md:flex-[75%] border-b md:border-r md:border-b-0">
             {images.map((image) => (
               <div key={image.id} className="w-full">
                 <Image
@@ -95,15 +95,12 @@ export default async function WorkPage({ params }) {
             ))}
           </section>
 
-          {/* DESCRIPTION */}
-          <section className="flex-1 md:flex-[25%] border-b md:border-r md:border-b-0">
-            <div className="px-4 py-8">
-              <ContentRenderer blocks={description} />
-            </div>
-          </section>
-
           {/* PROJECT INFO */}
           <section className="flex-1 md:flex-[25%]">
+            <div className="px-4 py-8 border-b">
+              <ContentRenderer blocks={description} />
+            </div>
+
             <div className="px-4 py-8">
               <ul>
                 {client && (
