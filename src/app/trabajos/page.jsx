@@ -1,6 +1,7 @@
 import React from "react";
 import { getGlobal, getWorks } from "@lib/api";
 import WorkCard from "@components/WorkCard";
+import Pagination from "@components/Pagination";
 
 export async function generateMetadata() {
   try {
@@ -39,9 +40,10 @@ export async function generateMetadata() {
   }
 }
 
-export default async function WorksPage() {
+export default async function WorksPage({ searchParams }) {
   try {
-    const worksData = await getWorks();
+    const currentPage = Number(searchParams.page) || 1;
+    const { data: worksData, meta } = await getWorks();
 
     return (
       <>
@@ -67,9 +69,12 @@ export default async function WorksPage() {
         </div>
 
         {/* PAGINATION */}
-        <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
-          <div className="flex-1 text-center mb-8 md:mb-0">
-            {/* COLOCAR PAGINACIÓN AQUÍ */}
+        <div className="flex flex-col md:flex-row w-full items-center bg-black text-yellow inverse-select">
+          <div className="flex-1 w-full text-center">
+            <Pagination
+              currentPage={meta.pagination.page}
+              totalPages={meta.pagination.pageCount}
+            />
           </div>
         </div>
       </>
