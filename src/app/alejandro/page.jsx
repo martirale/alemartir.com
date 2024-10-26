@@ -82,7 +82,7 @@ export default async function AboutPage() {
         </div>
 
         {/* CONTACTS */}
-        <div className="flex flex-col md:flex-row w-full items-center p-8 bg-black text-yellow inverse-select">
+        <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
           <div className="flex-1 text-center mb-8 md:mb-0">
             <h3 className="text-xl uppercase">¡Contáctame!</h3>
           </div>
