@@ -71,6 +71,12 @@ export default async function WorkPage({ params }) {
       <>
         <h1>{title}</h1>
 
+        <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
+          <div className="flex-1 text-center">
+            <h2>{title}</h2>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)]">
           {/* MEDIA CONTENT */}
           <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
