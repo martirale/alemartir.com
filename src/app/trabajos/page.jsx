@@ -65,6 +65,13 @@ export default async function WorksPage() {
             />
           ))}
         </div>
+
+        {/* PAGINATION */}
+        <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
+          <div className="flex-1 text-center mb-8 md:mb-0">
+            {/* COLOCAR PAGINACIÓN AQUÍ */}
+          </div>
+        </div>
       </>
     );
   } catch (error) {
