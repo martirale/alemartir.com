@@ -55,7 +55,7 @@ export default function Navbar() {
               href={option.url}
               target={option.target}
               rel="noopener noreferrer"
-              className="uppercase text-3xl md:text-2xl hover:underline my-2 md:ml-8 md:my-0"
+              className="md:uppercase text-3xl md:text-2xl hover:underline my-2 md:ml-8 md:my-0"
             >
               {option.name}
             </Link>
