@@ -1,6 +1,7 @@
 import React from "react";
 import { getGlobal, getWorkBySlug } from "@lib/api";
 import Image from "next/image";
+import Link from "next/link";
 import ContentRenderer from "@ui/ContentRenderer";
 
 export async function generateMetadata({ params }) {
@@ -8,7 +9,7 @@ export async function generateMetadata({ params }) {
     const globalData = await getGlobal();
     const { sitename, description } = globalData;
     const workData = await getWorkBySlug(params.slug);
-    const { title, slug } = workData;
+    const { title, slug, cover } = workData;
 
     if (!title) {
       return undefined;
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }) {
         type: "website",
         images: [
           {
-            url: "https://alemartir.com/alemartir-cover.webp",
+            url: `${process.env.STRAPI_API_URL}${cover.url}`,
             width: 1200,
             height: 630,
             alt: `${sitename}`,
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }) {
         card: "summary_large_image",
         title: `${title} | ${sitename}`,
         description: `${description}`,
-        images: ["https://alemartir.com/alemartir-cover.webp"],
+        images: [`${process.env.STRAPI_API_URL}${cover.url}`],
       },
       canonical: `https://alemartir.com/trabajos/${slug}`,
     };
@@ -79,7 +80,7 @@ export default async function WorkPage({ params }) {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)]">
+        <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)] border-b">
           {/* MEDIA CONTENT */}
           <section className="flex-1 md:flex-[75%] border-b md:border-r md:border-b-0">
             {images.map((image) => (
@@ -181,6 +182,17 @@ export default async function WorkPage({ params }) {
             </div>
           </section>
         </div>
+
+        {/* BACK WORKS */}
+        <Link href="/trabajos">
+          <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:bg-yellow hover:text-black inverse-select">
+            <div className="flex-1 text-center">
+              <span className="font-bold text-xl uppercase">
+                Otros trabajos
+              </span>
+            </div>
+          </div>
+        </Link>
       </>
     );
   } catch (error) {

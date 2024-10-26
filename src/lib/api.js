@@ -83,7 +83,7 @@ export const getWorks = async (page = 1, pageSize = 12) => {
 
 export const getWorkBySlug = async (slug) => {
   const dataWorkBySlug = await fetchAPI(
-    `/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=discipline&fields[7]=creative&fields[8]=strategy&fields[9]=lead&fields[10]=design&fields[11]=copywriting&fields[12]=illustration&fields[13]=animation&fields[14]=photo&fields[15]=team&fields[16]=description&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText`,
+    `/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=discipline&fields[7]=creative&fields[8]=strategy&fields[9]=lead&fields[10]=design&fields[11]=copywriting&fields[12]=illustration&fields[13]=animation&fields[14]=photo&fields[15]=team&fields[16]=description&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&populate[cover][fields][0]=url`,
     {
       cache: "no-store",
     }
