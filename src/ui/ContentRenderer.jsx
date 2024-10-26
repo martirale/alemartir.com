@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const headingClasses = {
-  2: "text-3xl",
-  3: "text-2xl",
-  4: "text-xl",
-  5: "text-lg",
+  2: "text-3xl mb-3",
+  3: "text-2xl mb-2",
+  4: "text-xl mb-2",
+  5: "text-lg mb-2",
 };
 
 export function ContentRenderer({ blocks }) {
