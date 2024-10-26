@@ -1,24 +1,17 @@
 import React from "react";
 import { getGlobal, getAbout } from "@lib/api";
 import Image from "next/image";
-import ContentRenderer from "@ui/ContentRenderer";
 
 export async function generateMetadata() {
   try {
     const globalData = await getGlobal();
     const { sitename, description } = globalData;
-    const aboutData = await getAbout();
-    const { title } = aboutData;
-
-    if (!title) {
-      return undefined;
-    }
 
     return {
-      title: `${title} | ${sitename}`,
+      title: `Trabajos | ${sitename}`,
       description: `${description}`,
       openGraph: {
-        title: `${title} | ${sitename}`,
+        title: `Trabajos | ${sitename}`,
         description: `${description}`,
         url: "https://alemartir.com/trabajos",
         type: "website",
@@ -33,7 +26,7 @@ export async function generateMetadata() {
       },
       twitter: {
         card: "summary_large_image",
-        title: `${title} | ${sitename}`,
+        title: `Trabajos | ${sitename}`,
         description: `${description}`,
         images: ["https://alemartir.com/alemartir-cover.webp"],
       },
