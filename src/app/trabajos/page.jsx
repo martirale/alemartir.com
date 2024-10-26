@@ -1,6 +1,5 @@
 import React from "react";
-import { getGlobal, getAbout, getWorks } from "@lib/api";
-import Image from "next/image";
+import { getGlobal, getWorks } from "@lib/api";
 import WorkCard from "@components/WorkCard";
 
 export async function generateMetadata() {
@@ -46,13 +45,20 @@ export default async function WorksPage() {
 
     return (
       <>
-        <h1>{title}</h1>
+        <h1>Trabajos</h1>
+
+        <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
+          <div className="flex-1 text-center">
+            <h2>Trabajos</h2>
+          </div>
+        </div>
 
         <div className="flex flex-col md:flex-row w-full">
           {worksData.map((work) => (
             <WorkCard
-              key={work.slug}
+              key={work.id}
               title={work.title}
+              slug={work.slug}
               client={work.client}
               discipline={work.discipline}
               cover={work.cover}
