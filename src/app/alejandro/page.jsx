@@ -78,7 +78,7 @@ export default async function AboutPage() {
               <h2 className="text-center">Alejandro Mártir</h2>
             </div>
 
-            <div className="px-4 py-8">
+            <div className="px-4 py-8 border-b">
               <ContentRenderer blocks={description} />
             </div>
           </section>
