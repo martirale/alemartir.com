@@ -6,7 +6,7 @@ export default function FooterSections() {
   const footerOptions = menuOptions.filter((option) => option.showFooter);
 
   return (
-    <div className="flex-1 md:flex-[25%] border-b md:border-r md:border-b-0 px-4 pt-4 pb-24">
+    <div className="flex-1 md:flex-[25%] border-b md:border-r md:border-b-0 px-4 pt-4 pb-16">
       <div className="flex flex-col">
         {footerOptions.map((option) => (
           <Link
