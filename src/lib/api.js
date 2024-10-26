@@ -69,12 +69,13 @@ export const getTerms = async () => {
 
 // WORKS INDEX
 export const getWorks = async () => {
-  return fetchAPI(
+  const dataWorks = await fetchAPI(
     `/api/works?fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=discipline&populate[cover][fields][0]=url&sort[0]=publishedAt:desc`,
     {
       cache: "no-store",
     }
   );
+  return dataWorks.data;
 };
 
 export const getWorkBySlug = async (slug) => {
