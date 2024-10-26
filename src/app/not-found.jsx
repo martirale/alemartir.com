@@ -23,8 +23,7 @@ export default function NotFound() {
         <div className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
           <div className="flex items-center justify-center px-4">
             <h2 className="text-7xl text-center py-32">
-              Ups, F... 404{" "}
-              <FontAwesomeIcon icon={faSkull} className="w-16 h-16" />
+              404... F <FontAwesomeIcon icon={faSkull} className="w-16 h-16" />
             </h2>
           </div>
         </div>
