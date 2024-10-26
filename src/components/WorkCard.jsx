@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function WorkCard({ title, slug, client, discipline, cover }) {
   return (
-    <div className="flex-1 md:flex-[25%] border-b border-r bg-yellow text-black hover:bg-black hover:text-yellow">
+    <div className="flex-1 md:flex-[25%] border-b border-r bg-yellow text-black group">
       <Link href={`/trabajos/${slug}`}>
         <div className="w-full aspect-w-1 aspect-h-1 border-b">
           <Image
@@ -16,7 +16,7 @@ export default function WorkCard({ title, slug, client, discipline, cover }) {
           />
         </div>
         <div className="p-4">
-          <h3>{title}</h3>
+          <h3 className="group-hover:underline">{title}</h3>
           <p>
             <span className="font-bold">{client}</span>
             <br />

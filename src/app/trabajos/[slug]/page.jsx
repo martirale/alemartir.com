@@ -185,7 +185,7 @@ export default async function WorkPage({ params }) {
 
         {/* BACK WORKS */}
         <Link href="/trabajos">
-          <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:bg-yellow hover:text-black inverse-select">
+          <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:underline inverse-select">
             <div className="flex-1 text-center">
               <span className="font-bold text-xl uppercase">
                 Otros trabajos
