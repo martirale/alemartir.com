@@ -1,6 +1,7 @@
 import React from "react";
-import { getGlobal, getAbout } from "@lib/api";
+import { getGlobal, getAbout, getWorks } from "@lib/api";
 import Image from "next/image";
+import WorkCard from "@components/WorkCard";
 
 export async function generateMetadata() {
   try {
@@ -41,14 +42,23 @@ export async function generateMetadata() {
 
 export default async function WorksPage() {
   try {
-    const aboutData = await getAbout();
+    const worksData = await getWorks();
 
-    const { title } = aboutData;
     return (
       <>
         <h1>{title}</h1>
 
-        <div className="flex flex-col md:flex-row w-full"></div>
+        <div className="flex flex-col md:flex-row w-full">
+          {worksData.map((work) => (
+            <WorkCard
+              key={work.slug}
+              title={work.title}
+              client={work.client}
+              discipline={work.discipline}
+              cover={work.cover}
+            />
+          ))}
+        </div>
       </>
     );
   } catch (error) {
