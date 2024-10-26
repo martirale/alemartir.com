@@ -1,10 +1,29 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function WorkCard({ title, client, discipline, cover }) {
+export default function WorkCard({ title, slug, client, discipline, cover }) {
   return (
-    <div className="flex-1 md:flex-[25%] border-b border-r">
-      <></>
+    <div className="flex-1 md:flex-[25%] border-b border-r bg-yellow text-black hover:bg-black hover:text-yellow">
+      <Link href={`/trabajos/${slug}`}>
+        <div className="w-full aspect-w-1 aspect-h-1 border-b">
+          <Image
+            src={`${process.env.STRAPI_API_URL}${cover.url}`}
+            alt={cover.url}
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-4">
+          <h3>{title}</h3>
+          <p>
+            <span className="font-bold">{client}</span>
+            <br />
+            <span>{discipline}</span>
+          </p>
+        </div>
+      </Link>
     </div>
   );
 }
