@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import MonoAM from "@logos/MonoAM";
 
 export default function FooterBrand() {
