@@ -60,7 +60,7 @@ export default async function AboutPage() {
         <h1>{title}</h1>
 
         <div className="flex flex-col md:flex-row w-full">
-          <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
+          <div className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
             <div className="w-full aspect-w-1 aspect-h-1">
               <Image
                 src={`${process.env.STRAPI_API_URL}${profile.url}`}
@@ -70,7 +70,7 @@ export default async function AboutPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-          </section>
+          </div>
 
           {/* ABOUT CONTENT */}
           <section className="flex-1 md:flex-[50%]">
@@ -85,7 +85,7 @@ export default async function AboutPage() {
         </div>
 
         {/* CONTACTS */}
-        <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
+        <section className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
           <div className="flex-1 text-center mb-8 md:mb-0">
             <h3 className="text-xl uppercase">¡Contáctame!</h3>
           </div>
@@ -114,7 +114,7 @@ export default async function AboutPage() {
               WhatsApp
             </Link>
           </div>
-        </div>
+        </section>
       </>
     );
   } catch (error) {
