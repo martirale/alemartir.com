@@ -8,6 +8,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default async function WorksSection() {
   try {
     const { data: worksData } = await getWorks();
+    const limitedWorksData = worksData.slice(0, 4);
 
     return (
       <>
@@ -19,7 +20,7 @@ export default async function WorksSection() {
           </div>
 
           <div className="flex flex-col md:flex-row w-full">
-            {worksData.map((work) => (
+            {limitedWorksData.map((work) => (
               <WorkCard
                 key={work.id}
                 title={work.title}
