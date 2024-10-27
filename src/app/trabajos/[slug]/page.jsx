@@ -3,6 +3,8 @@ import { getGlobal, getWorkBySlug } from "@lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import ContentRenderer from "@ui/ContentRenderer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export async function generateMetadata({ params }) {
   try {
@@ -187,8 +189,8 @@ export default async function WorkPage({ params }) {
         <Link href="/trabajos">
           <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:underline inverse-select">
             <div className="flex-1 text-center">
-              <span className="font-bold text-xl uppercase">
-                Otros trabajos
+              <span className="text-xl uppercase">
+                <FontAwesomeIcon icon={faArrowLeft} /> Otros trabajos
               </span>
             </div>
           </div>
