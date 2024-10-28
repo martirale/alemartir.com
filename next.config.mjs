@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "d3t3ozftmdmh3i.cloudfront.net",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
