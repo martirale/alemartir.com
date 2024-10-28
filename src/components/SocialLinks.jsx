@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
-import { faTwitch } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faFacebook,
+  faSpotify,
+  faTwitch,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function SocialLinks() {
   const links = [
