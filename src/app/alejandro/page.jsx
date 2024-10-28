@@ -3,6 +3,7 @@ import { getGlobal, getAbout } from "@lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import ContentRenderer from "@ui/ContentRenderer";
+import SocialLinks from "@components/SocialLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -80,6 +81,10 @@ export default async function AboutPage() {
 
             <div className="px-4 py-8 border-b">
               <ContentRenderer blocks={description} />
+            </div>
+
+            <div className="border-b">
+              <SocialLinks />
             </div>
           </section>
         </div>
