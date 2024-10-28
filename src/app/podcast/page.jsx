@@ -1,5 +1,6 @@
 import React from "react";
 import { getGlobal } from "@lib/api";
+import PodcastPlayer from "@components/podcast/PodcastPlayer";
 
 export async function generateMetadata() {
   try {
@@ -42,6 +43,8 @@ export default function PodcastPage() {
   return (
     <>
       <h1>Podcast</h1>
+
+      <PodcastPlayer />
     </>
   );
 }
