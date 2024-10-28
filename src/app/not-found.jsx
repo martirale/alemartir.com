@@ -1,8 +1,7 @@
 import React from "react";
 import { getGlobal } from "@lib/api";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSkull } from "@fortawesome/free-solid-svg-icons";
+import { faGhost } from "@fortawesome/free-solid-svg-icons";
 
 export async function generateMetadata() {
   const globalData = await getGlobal();
@@ -23,7 +22,7 @@ export default function NotFound() {
         <div className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
           <div className="flex items-center justify-center px-4">
             <h2 className="text-7xl text-center py-32">
-              404... F <FontAwesomeIcon icon={faSkull} className="w-16 h-16" />
+              F... <FontAwesomeIcon icon={faGhost} className="w-16 h-16" />
             </h2>
           </div>
         </div>
@@ -31,7 +30,7 @@ export default function NotFound() {
         <div className="flex-1 md:flex-[50%]">
           <div className="flex items-center justify-center px-4">
             <p className="text-2xl text-center py-16 md:py-32 md:mt-7">
-              Lo siento, pero parece que la página no existe...
+              Lo siento, la página no existe...
             </p>
           </div>
         </div>
