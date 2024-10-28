@@ -55,7 +55,7 @@ export default async function WorksPage({ searchParams }) {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 w-full">
           {worksData.map((work) => (
             <WorkCard
               key={work.id}
