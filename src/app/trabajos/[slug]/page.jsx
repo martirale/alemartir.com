@@ -76,15 +76,15 @@ export default async function WorkPage({ params }) {
       <>
         <h1>{title}</h1>
 
-        <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
-          <div className="flex-1 text-center md:mt-1">
+        <div className="grid grid-cols-1 w-full p-4 border-b">
+          <div className="text-center md:mt-1">
             <h2>{title}</h2>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full md:min-h-[calc(100vh-50%)] border-b">
+        <div className="grid grid-cols-1 md:grid-cols-4 w-full md:min-h-[calc(100vh-50%)] border-b">
           {/* MEDIA CONTENT */}
-          <section className="flex-1 md:flex-[75%] border-b md:border-r md:border-b-0">
+          <section className="col-span-1 md:col-span-3 border-b md:border-r md:border-b-0">
             {images.map((image) => (
               <div key={image.id} className="w-full">
                 <Image
@@ -99,7 +99,7 @@ export default async function WorkPage({ params }) {
           </section>
 
           {/* PROJECT INFO */}
-          <section className="flex-1 md:flex-[25%]">
+          <section className="col-span-1">
             <div className="px-4 py-8 border-b">
               <ContentRenderer blocks={description} />
             </div>
@@ -187,8 +187,8 @@ export default async function WorkPage({ params }) {
 
         {/* BACK WORKS */}
         <Link href="/trabajos">
-          <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:underline inverse-select">
-            <div className="flex-1 text-center">
+          <div className="grid grid-cols-1 w-full p-4 bg-black text-yellow hover:underline inverse-select">
+            <div className="text-center">
               <span className="text-xl uppercase">
                 <FontAwesomeIcon icon={faArrowLeft} className="w-5 h-5" /> Otros
                 trabajos

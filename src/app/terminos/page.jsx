@@ -64,8 +64,8 @@ export default async function TermsPage() {
       <>
         <h1>{title}</h1>
 
-        <div className="flex flex-col md:flex-row w-full">
-          <section className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+          <section className="col-span-1 border-b md:border-r md:border-b-0">
             <div className="px-4 py-8">
               <h2 className="text-4xl md:text-5xl">{title}</h2>
 
@@ -81,7 +81,7 @@ export default async function TermsPage() {
             </div>
           </section>
 
-          <section className="flex-1 md:flex-[50%]">
+          <section className="col-span-1">
             <div className="p-4 md:py-8">
               <ContentRenderer blocks={content} />
             </div>

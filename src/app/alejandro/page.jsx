@@ -60,8 +60,8 @@ export default async function AboutPage() {
       <>
         <h1>{title}</h1>
 
-        <div className="flex flex-col md:flex-row w-full">
-          <div className="flex-1 md:flex-[50%] border-b md:border-r md:border-b-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+          <div className="col-span-1 border-b md:border-r md:border-b-0">
             <div className="w-full aspect-w-1 aspect-h-1">
               <Image
                 src={`${process.env.STRAPI_API_URL}${profile.url}`}
@@ -74,8 +74,8 @@ export default async function AboutPage() {
           </div>
 
           {/* ABOUT CONTENT */}
-          <section className="flex-1 md:flex-[50%]">
-            <div className="flex w-full items-center justify-center p-4 border-b">
+          <section className="col-span-1">
+            <div className="w-full p-4 border-b">
               <h2 className="text-center md:mt-1">Alejandro Mártir</h2>
             </div>
 
@@ -90,12 +90,12 @@ export default async function AboutPage() {
         </div>
 
         {/* CONTACTS */}
-        <section className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow inverse-select">
-          <div className="flex-1 text-center mb-8 md:mb-0">
+        <section className="grid grid-cols-1 md:grid-cols-3 w-full p-4 bg-black text-yellow inverse-select">
+          <div className="text-center mb-8 md:mb-0">
             <h3 className="text-xl uppercase">¡Contáctame!</h3>
           </div>
 
-          <div className="flex-1 text-center mb-2 md:mb-0">
+          <div className="text-center mb-2 md:mb-0">
             <Link href={email} className="text-xl uppercase hover:underline">
               <FontAwesomeIcon
                 icon={faEnvelopeOpen}
@@ -105,7 +105,7 @@ export default async function AboutPage() {
             </Link>
           </div>
 
-          <div className="flex-1 text-center">
+          <div className="text-center">
             <Link
               href={phone}
               target="_blank"

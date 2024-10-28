@@ -6,13 +6,11 @@ import FooterCopyright from "./FooterCopyright";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-yellow text-black border-t">
-      <div className="flex flex-col md:flex-row w-full">
-        <FooterBrand />
-        <FooterSections />
-        <FooterMisc />
-        <FooterCopyright />
-      </div>
+    <footer className="grid grid-cols-1 md:grid-cols-4 w-full bg-yellow text-black border-t">
+      <FooterBrand />
+      <FooterSections />
+      <FooterMisc />
+      <FooterCopyright />
     </footer>
   );
 }

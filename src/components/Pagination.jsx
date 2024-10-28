@@ -8,10 +8,10 @@ const Pagination = ({ currentPage, totalPages }) => {
   const pathname = usePathname();
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="grid grid-cols-3">
       <Link
         href={currentPage > 1 ? `${pathname}?page=${currentPage - 1}` : "#"}
-        className={`flex-[35%] md:flex-1 p-4 ${currentPage <= 1 ? "opacity-50 cursor-not-allowed" : "hover:underline"}`}
+        className={`p-4 ${currentPage <= 1 ? "opacity-50 cursor-not-allowed" : "hover:underline"}`}
       >
         Anterior
       </Link>
@@ -19,7 +19,7 @@ const Pagination = ({ currentPage, totalPages }) => {
         <Link
           key={i}
           href={`${pathname}?page=${i + 1}`}
-          className={`flex-[30%] md:flex-1 px-8 py-4 ${
+          className={`px-8 py-4 ${
             currentPage === i + 1 ? "border-l border-r" : "hover:underline"
           }`}
         >
@@ -30,7 +30,7 @@ const Pagination = ({ currentPage, totalPages }) => {
         href={
           currentPage < totalPages ? `${pathname}?page=${currentPage + 1}` : "#"
         }
-        className={`flex-[35%] md:flex-1 p-4 ${currentPage >= totalPages ? "opacity-50 cursor-not-allowed" : "hover:underline"}`}
+        className={`p-4 ${currentPage >= totalPages ? "opacity-50 cursor-not-allowed" : "hover:underline"}`}
       >
         Siguiente
       </Link>

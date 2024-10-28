@@ -49,8 +49,8 @@ export default async function WorksPage({ searchParams }) {
       <>
         <h1>Trabajos</h1>
 
-        <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
-          <div className="flex-1 text-center md:mt-1">
+        <div className="grid grid-cols-1 w-full p-4 border-b">
+          <div className="text-center md:mt-1">
             <h2>Trabajos</h2>
           </div>
         </div>
@@ -69,8 +69,8 @@ export default async function WorksPage({ searchParams }) {
         </div>
 
         {/* PAGINATION */}
-        <div className="flex flex-col md:flex-row w-full items-center bg-black text-yellow inverse-select">
-          <div className="flex-1 w-full text-center">
+        <div className="grid grid-cols-1 w-full bg-black text-yellow inverse-select">
+          <div className="text-center">
             <Pagination
               currentPage={meta.pagination.page}
               totalPages={meta.pagination.pageCount}

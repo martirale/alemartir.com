@@ -13,13 +13,13 @@ export default async function WorksSection() {
     return (
       <>
         <section>
-          <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
-            <div className="flex-1 text-center md:mt-1">
+          <div className="grid grid-cols-1 w-full p-4 border-b">
+            <div className="text-center md:mt-1">
               <h2>Trabajos</h2>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row w-full">
+          <div className="grid grid-cols-1 md:grid-cols-4 w-full">
             {limitedWorksData.map((work) => (
               <WorkCard
                 key={work.id}
@@ -34,8 +34,8 @@ export default async function WorksSection() {
         </section>
 
         <Link href="/trabajos">
-          <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:underline inverse-select">
-            <div className="flex-1 text-center">
+          <div className="grid grid-cols-1 w-full p-4 bg-black text-yellow hover:underline inverse-select">
+            <div className="text-center">
               <span className="text-xl uppercase">
                 Todos los trabajos{" "}
                 <FontAwesomeIcon icon={faArrowRight} className="w-5 h-5" />

@@ -212,9 +212,9 @@ const PodcastPlayer = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="grid grid-cols-1 md:grid-cols-4 w-full">
       {/* Columna 1: Reproductor */}
-      <section className="flex-1 md:flex-[75%] p-4 md:p-8 items-center border-b md:border-b-0 md:border-r">
+      <section className="col-span-1 md:col-span-3 p-4 md:p-8 border-b md:border-b-0 md:border-r">
         {currentEpisode && (
           <div className="flex flex-col items-center">
             {/* Episode Cover */}
@@ -335,7 +335,7 @@ const PodcastPlayer = () => {
       </section>
 
       {/* Columna 2: Lista de episodios */}
-      <div className="flex-1 md:flex-[25%] p-4 md:p-8 items-center max-h-96 md:max-h-[756px] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+      <section className="col-span-1 p-4 md:p-8 items-center max-h-96 md:max-h-[756px] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         <ul>
           {episodes.map((episode, index) => (
             <li
@@ -361,7 +361,7 @@ const PodcastPlayer = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </div>
   );
 };
