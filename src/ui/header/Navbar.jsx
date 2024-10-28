@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import MonoAM from "@logos/MonoAM";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MonoAM from "@logos/MonoAM";
 import { menuOptions } from "@ui/menuOptions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBarsStaggered, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ export default function Navbar() {
     return menuClasses.join(" ");
   }
 
-  const footerOptions = menuOptions.filter((option) => option.showHeader);
+  const options = menuOptions.filter((option) => option.showHeader);
 
   return (
     <nav>
@@ -49,17 +49,23 @@ export default function Navbar() {
         </Link>
 
         <div className={getMenuClasses()}>
-          {footerOptions.map((option) => (
-            <Link
-              key={option.name}
-              href={option.url}
-              target={option.target}
-              rel="noopener noreferrer"
-              className="md:uppercase text-3xl md:text-2xl hover:underline my-2 md:ml-8 md:my-0"
-            >
-              {option.name}
-            </Link>
-          ))}
+          {options.map((option) => {
+            const isActive = pathname === option.url;
+
+            return (
+              <Link
+                key={option.name}
+                href={option.url}
+                target={option.target}
+                rel="noopener noreferrer"
+                className={`md:uppercase text-3xl md:text-2xl hover:underline my-2 md:ml-8 md:my-0" ${
+                  isActive ? "underline" : ""
+                }`}
+              >
+                {option.name}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center md:hidden">
