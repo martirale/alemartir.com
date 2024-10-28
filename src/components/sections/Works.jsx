@@ -14,7 +14,7 @@ export default async function WorksSection() {
       <>
         <section>
           <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
-            <div className="flex-1 text-center mt-2">
+            <div className="flex-1 text-center md:mt-1">
               <h2>Trabajos</h2>
             </div>
           </div>
