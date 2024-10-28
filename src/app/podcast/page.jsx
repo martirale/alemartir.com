@@ -7,10 +7,10 @@ export async function generateMetadata() {
     const { sitename, description } = globalData;
 
     return {
-      title: `Podcast | ${sitename}`,
+      title: `Café Creativo Podcast | ${sitename}`,
       description: `${description}`,
       openGraph: {
-        title: `Podcast | ${sitename}`,
+        title: `Café Creativo Podcast | ${sitename}`,
         description: `${description}`,
         url: "https://alemartir.com/podcast",
         type: "website",
@@ -25,7 +25,7 @@ export async function generateMetadata() {
       },
       twitter: {
         card: "summary_large_image",
-        title: `Podcast | ${sitename}`,
+        title: `Café Creativo Podcast | ${sitename}`,
         description: `${description}`,
         images: ["https://alemartir.com/alemartir-cover.webp"],
       },
@@ -38,7 +38,7 @@ export async function generateMetadata() {
   }
 }
 
-export default async function PodcastPage() {
+export default function PodcastPage() {
   return (
     <>
       <h1>Podcast</h1>
