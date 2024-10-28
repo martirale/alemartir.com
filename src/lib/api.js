@@ -99,7 +99,7 @@ export const getWorkBySlug = async (slug) => {
 
 export const getHomeHero = async () => {
   const dataHomeHero = await fetchAPI(
-    `/api/home-hero?fields[0]=quote&populate[cover][fields][0]=url`,
+    `/api/home-hero?fields[0]=title&fields[1]=quote&populate[cover][fields][0]=url`,
     {
       cache: "no-store",
     }
