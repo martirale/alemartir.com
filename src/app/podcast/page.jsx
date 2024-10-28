@@ -5,7 +5,7 @@ import PodcastPlayer from "@components/podcast/PodcastPlayer";
 export async function generateMetadata() {
   try {
     const globalData = await getGlobal();
-    const { sitename, description } = globalData;
+    const { sitename, description, cover } = globalData;
 
     return {
       title: `Café Creativo Podcast | ${sitename}`,
@@ -17,7 +17,7 @@ export async function generateMetadata() {
         type: "website",
         images: [
           {
-            url: "https://alemartir.com/alemartir-cover.webp",
+            url: `${process.env.STRAPI_API_URL}${cover.url}`,
             width: 1200,
             height: 630,
             alt: `${sitename}`,
@@ -28,7 +28,7 @@ export async function generateMetadata() {
         card: "summary_large_image",
         title: `Café Creativo Podcast | ${sitename}`,
         description: `${description}`,
-        images: ["https://alemartir.com/alemartir-cover.webp"],
+        images: [`${process.env.STRAPI_API_URL}${cover.url}`],
       },
       canonical: "https://alemartir.com/podcast",
     };

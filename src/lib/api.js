@@ -26,7 +26,7 @@ const fetchAPI = async (endpoint, options = {}) => {
 // METADATA GLOBAL
 export const getGlobal = async () => {
   const dataGlobal = await fetchAPI(
-    `/api/global?fields[0]=sitename&fields[1]=description`,
+    `/api/global?fields[0]=sitename&fields[1]=description&populate[cover][fields][0]=url`,
     {
       cache: "no-store",
     }
