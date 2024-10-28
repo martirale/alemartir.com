@@ -1,4 +1,4 @@
-import WorksSection from "@components/sections/Works";
+import WorksSection from "@components/sections/WorksSection";
 import React from "react";
 
 export default function HomePage() {
