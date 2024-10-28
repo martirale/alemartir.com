@@ -1,22 +1,25 @@
 import React from "react";
-import { getAbout } from "@lib/api";
+import { getHomeHero } from "@lib/api";
 import Image from "next/image";
+import ContentRenderer from "@ui/ContentRenderer";
 
 export default async function HomeHero() {
-  const aboutData = await getAbout();
+  const homeHeroData = await getHomeHero();
 
-  const { profile } = aboutData;
+  const { cover, quote } = homeHeroData;
   return (
     <>
       <section className="grid grid-cols-1 md:grid-cols-4 w-full border-b">
-        <div className="col-span-1 md:border-r order-2 md:order-1 p-4 text-center">
-          <p>Lorem ipsum 1.</p>
+        <div className="col-span-1 md:border-r order-2 md:order-1">
+          <div className="px-4 pt-4 md:pt-0 text-center md:text-left h-full place-content-end">
+            <ContentRenderer blocks={quote} />
+          </div>
         </div>
 
-        <div className="col-span-1 md:col-span-3 md:-mt-[75px] md:pt-[75px] h-[550px] md:h-dvh order-1 md:order-2">
+        <div className="col-span-1 md:col-span-3 md:-mt-[75px] md:pt-[75px] h-[550px] md:h-dvh order-1 md:order-2 border-b md:border-b-0">
           <Image
-            src={`${process.env.STRAPI_API_URL}${profile.url}`}
-            alt={profile.url}
+            src={`${process.env.STRAPI_API_URL}${cover.url}`}
+            alt={cover.url}
             width={1920}
             height={1080}
             className="w-full h-full object-cover"

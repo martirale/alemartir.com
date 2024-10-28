@@ -96,3 +96,13 @@ export const getWorkBySlug = async (slug) => {
   const dataWork = dataWorkBySlug.data[0];
   return dataWork;
 };
+
+export const getHomeHero = async () => {
+  const dataHomeHero = await fetchAPI(
+    `/api/home-hero?fields[0]=quote&populate[cover][fields][0]=url`,
+    {
+      cache: "no-store",
+    }
+  );
+  return dataHomeHero.data;
+};
