@@ -190,7 +190,8 @@ export default async function WorkPage({ params }) {
           <div className="flex flex-col md:flex-row w-full items-center p-4 bg-black text-yellow hover:underline inverse-select">
             <div className="flex-1 text-center">
               <span className="text-xl uppercase">
-                <FontAwesomeIcon icon={faArrowLeft} /> Otros trabajos
+                <FontAwesomeIcon icon={faArrowLeft} className="w-5 h-5" /> Otros
+                trabajos
               </span>
             </div>
           </div>
