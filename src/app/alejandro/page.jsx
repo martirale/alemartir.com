@@ -76,7 +76,7 @@ export default async function AboutPage() {
           {/* ABOUT CONTENT */}
           <section className="flex-1 md:flex-[50%]">
             <div className="flex w-full items-center justify-center p-4 border-b">
-              <h2 className="text-center">Alejandro Mártir</h2>
+              <h2 className="text-center mt-2">Alejandro Mártir</h2>
             </div>
 
             <div className="px-4 py-8 border-b">

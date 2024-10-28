@@ -50,7 +50,7 @@ export default async function WorksPage({ searchParams }) {
         <h1>Trabajos</h1>
 
         <div className="flex flex-col md:flex-row w-full items-center p-4 border-b">
-          <div className="flex-1 text-center">
+          <div className="flex-1 text-center mt-2">
             <h2>Trabajos</h2>
           </div>
         </div>
