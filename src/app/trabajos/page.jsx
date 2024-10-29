@@ -55,16 +55,16 @@ export default async function WorksPage({ searchParams }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 w-full">
+        <div className="overflow-hidden grid grid-cols-1 md:grid-cols-4 w-full">
           {worksData.map((work, index) => (
             <WorkCard
               key={work.id}
-              index={index}
               title={work.title}
               slug={work.slug}
               client={work.client}
               discipline={work.discipline}
               cover={work.cover}
+              isLastInRow={(index + 1) % 4 === 0}
             />
           ))}
         </div>

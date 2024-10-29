@@ -23,12 +23,12 @@ export default async function WorksSection() {
             {limitedWorksData.map((work, index) => (
               <WorkCard
                 key={work.id}
-                index={index}
                 title={work.title}
                 slug={work.slug}
                 client={work.client}
                 discipline={work.discipline}
                 cover={work.cover}
+                isLastInRow={(index + 1) % 4 === 0}
               />
             ))}
           </div>
