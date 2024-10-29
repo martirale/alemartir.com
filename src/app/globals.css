@@ -80,6 +80,17 @@ select,
   cursor: pointer !important;
 }
 
-.custom-cursor-active * {
-  cursor: none !important;
+/* Ocultar el cursor por defecto cuando el CustomCursor está activo */
+@media (hover: hover) and (pointer: fine) {
+  /* Solo aplicar en dispositivos con mouse/cursor */
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Restaurar cursor normal en dispositivos táctiles/móviles */
+@media (hover: none) or (pointer: coarse) {
+  .custom-cursor-active * {
+    cursor: auto !important;
+  }
 }

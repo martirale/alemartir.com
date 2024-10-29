@@ -5,6 +5,21 @@ import { useState, useEffect, useCallback } from "react";
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Detectar si es un dispositivo con mouse
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setIsDesktop(mediaQuery.matches);
+
+    // Escuchar cambios en el tipo de dispositivo
+    const updateDeviceType = (e) => {
+      setIsDesktop(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", updateDeviceType);
+    return () => mediaQuery.removeEventListener("change", updateDeviceType);
+  }, []);
 
   const updatePosition = useCallback((e) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -25,6 +40,8 @@ export default function CustomCursor() {
   }, []);
 
   useEffect(() => {
+    if (!isDesktop) return; // No añadir event listeners en móviles
+
     document.addEventListener("mousemove", updatePosition);
     document.addEventListener("mouseover", updateCursorType);
 
@@ -32,7 +49,9 @@ export default function CustomCursor() {
       document.removeEventListener("mousemove", updatePosition);
       document.removeEventListener("mouseover", updateCursorType);
     };
-  }, [updatePosition, updateCursorType]);
+  }, [isDesktop, updatePosition, updateCursorType]);
+
+  if (!isDesktop) return null;
 
   return (
     <div
