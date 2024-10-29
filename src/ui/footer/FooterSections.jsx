@@ -9,15 +9,17 @@ export default function FooterSections() {
     <div className="border-b md:border-r md:border-b-0 px-4 pt-4 pb-16">
       <div className="flex flex-col">
         {footerOptions.map((option) => (
-          <Link
-            key={option.name}
-            href={option.url}
-            target={option.target}
-            rel="noopener noreferrer"
-            className="uppercase text-xl md:text-base mb-2 hover:underline"
-          >
-            {option.name}
-          </Link>
+          <span className="inline-block">
+            <Link
+              key={option.name}
+              href={option.url}
+              target={option.target}
+              rel="noopener noreferrer"
+              className="uppercase text-xl md:text-base mb-2 hover:underline"
+            >
+              {option.name}
+            </Link>
+          </span>
         ))}
       </div>
     </div>
