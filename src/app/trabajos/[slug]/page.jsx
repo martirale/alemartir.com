@@ -92,7 +92,7 @@ export default async function WorkPage({ params }) {
                   alt={image.alternativeText}
                   width={1920}
                   height={1080}
-                  className="w-full h-auto"
+                  className="w-full h-auto yellow-cursor"
                 />
               </div>
             ))}

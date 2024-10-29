@@ -6,13 +6,12 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isYellowZone, setIsYellowZone] = useState(false);
 
   useEffect(() => {
-    // Detectar si es un dispositivo con mouse
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
     setIsDesktop(mediaQuery.matches);
 
-    // Escuchar cambios en el tipo de dispositivo
     const updateDeviceType = (e) => {
       setIsDesktop(e.matches);
     };
@@ -36,11 +35,15 @@ export default function CustomCursor() {
         'a[href], button, [role="button"], [tabindex]:not([tabindex="-1"])'
       );
 
+    // Verificar si el elemento o alguno de sus padres tiene la clase yellow-cursor
+    const hasYellowCursor = target.closest(".yellow-cursor") !== null;
+
     setIsPointer(isInteractive);
+    setIsYellowZone(hasYellowCursor);
   }, []);
 
   useEffect(() => {
-    if (!isDesktop) return; // No añadir event listeners en móviles
+    if (!isDesktop) return;
 
     document.addEventListener("mousemove", updatePosition);
     document.addEventListener("mouseover", updateCursorType);
@@ -62,12 +65,15 @@ export default function CustomCursor() {
         width: "20px",
         height: "20px",
         borderRadius: "50%",
-        border: "2px solid black",
-        boxShadow: "0 0 0 1px yellow",
-        backgroundColor: isPointer ? "black" : "transparent",
+        border: `2px solid ${isYellowZone ? "yellow" : "black"}`,
+        backgroundColor: isPointer
+          ? isYellowZone
+            ? "yellow"
+            : "black"
+          : "transparent",
         pointerEvents: "none",
         zIndex: 9999,
-        transition: "background-color 0.3s ease",
+        transition: "background-color 0.3s ease, border-color 0.3s ease",
         transform: "translate(-50%, -50%)",
       }}
     />

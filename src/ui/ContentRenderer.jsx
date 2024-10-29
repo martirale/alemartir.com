@@ -72,7 +72,7 @@ export function ContentRenderer({ blocks }) {
             alt={block.image.alternativeText || ""}
             width={width}
             height={height}
-            className="w-full h-auto mb-2 border border-black"
+            className="w-full h-auto mb-2 border border-black yellow-cursor"
           />
           {block.image.caption && (
             <figcaption className="text-xs text-center text-black md:px-24">
