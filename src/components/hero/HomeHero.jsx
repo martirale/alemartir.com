@@ -24,7 +24,7 @@ export default async function HomeHero() {
             alt={cover.url}
             width={1920}
             height={1080}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover yellow-cursor"
           />
         </div>
       </section>

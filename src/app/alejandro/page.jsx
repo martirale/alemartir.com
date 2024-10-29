@@ -76,7 +76,7 @@ export default async function AboutPage() {
                 alt={profile.url}
                 width={1920}
                 height={1080}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover yellow-cursor"
               />
             </div>
           </div>
@@ -127,7 +127,7 @@ export default async function AboutPage() {
         </div>
 
         {/* CONTACTS */}
-        <section className="grid grid-cols-1 md:grid-cols-3 w-full p-4 bg-black text-yellow inverse-select">
+        <section className="grid grid-cols-1 md:grid-cols-3 w-full p-4 bg-black text-yellow inverse-select yellow-cursor">
           <div className="text-center mb-8 md:mb-0">
             <h3 className="text-xl uppercase">¡Contáctame!</h3>
           </div>
