@@ -13,8 +13,9 @@ export default function WorkCard({
   return (
     <div
       className={`border-b md:border-r bg-yellow text-black group ${
-        (index + 1) % 4 === 0 ? "md:border-r-0" : ""
+        (index + 1) % 4 === 0 ? "" : "md:border-r"
       }`}
+      style={(index + 1) % 4 === 0 ? { borderRightColor: "transparent" } : {}}
     >
       <Link href={`/trabajos/${slug}`}>
         <div className="w-full aspect-w-1 aspect-h-1 border-b">

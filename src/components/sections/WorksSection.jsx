@@ -20,9 +20,10 @@ export default async function WorksSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 w-full">
-            {limitedWorksData.map((work) => (
+            {limitedWorksData.map((work, index) => (
               <WorkCard
                 key={work.id}
+                index={index}
                 title={work.title}
                 slug={work.slug}
                 client={work.client}
