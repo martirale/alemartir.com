@@ -70,7 +70,7 @@ export default async function PrivacyPage() {
               <h2 className="text-4xl md:text-5xl">{title}</h2>
 
               <div
-                className="bg-black text-yellow mt-8 py-1 px-5 text-xs rounded-full inline-block"
+                className="bg-black text-yellow mt-8 py-1 px-3 text-xs rounded-full inline-block"
                 title={`Política actualizada el ${formattedDate}`}
               >
                 <p className="uppercase">
