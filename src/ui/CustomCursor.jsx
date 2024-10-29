@@ -63,6 +63,7 @@ export default function CustomCursor() {
         height: "20px",
         borderRadius: "50%",
         border: "2px solid black",
+        boxShadow: "0 0 0 1px yellow",
         backgroundColor: isPointer ? "black" : "transparent",
         pointerEvents: "none",
         zIndex: 9999,
