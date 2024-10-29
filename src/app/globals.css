@@ -66,3 +66,20 @@ h1 {
     font-size: var(--h5-font-size);
   }
 }
+
+/* CUSTOM CURSOR */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer !important;
+}
+
+.custom-cursor-active * {
+  cursor: none !important;
+}

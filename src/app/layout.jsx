@@ -4,6 +4,7 @@ import { getGlobal } from "@lib/api";
 import Header from "@ui/header/Header";
 import Footer from "@ui/footer/Footer";
 import { Montserrat } from "next/font/google";
+import CustomCursor from "@ui/CustomCursor";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -53,12 +54,14 @@ export async function generateMetadata() {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={montserrat.className}>
-      <body className="bg-yellow text-black custom-vh">
+      <body className="bg-yellow text-black custom-vh custom-cursor-active">
         <Header />
 
         <main className="w-full mx-auto pt-[75px]">{children}</main>
 
         <Footer />
+
+        <CustomCursor />
       </body>
     </html>
   );
