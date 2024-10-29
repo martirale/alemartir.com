@@ -2,9 +2,20 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function WorkCard({ title, slug, client, discipline, cover }) {
+export default function WorkCard({
+  title,
+  slug,
+  client,
+  discipline,
+  cover,
+  index,
+}) {
   return (
-    <div className="border-b md:border-r bg-yellow text-black group">
+    <div
+      className={`border-b md:border-r bg-yellow text-black group ${
+        (index + 1) % 4 === 0 ? "md:border-r-0" : ""
+      }`}
+    >
       <Link href={`/trabajos/${slug}`}>
         <div className="w-full aspect-w-1 aspect-h-1 border-b">
           <Image

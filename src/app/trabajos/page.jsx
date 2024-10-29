@@ -56,9 +56,10 @@ export default async function WorksPage({ searchParams }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 w-full">
-          {worksData.map((work) => (
+          {worksData.map((work, index) => (
             <WorkCard
               key={work.id}
+              index={index}
               title={work.title}
               slug={work.slug}
               client={work.client}
