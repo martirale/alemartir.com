@@ -13,7 +13,7 @@ export default function WorkCard({
   return (
     <div className={`relative border-b bg-yellow text-black group`}>
       {!isLastInRow && (
-        <div className="absolute top-0 right-0 h-full border-r" />
+        <div className="absolute top-0 right-0 h-full border-r border-black" />
       )}
       <Link href={`/trabajos/${slug}`}>
         <div className="w-full aspect-w-1 aspect-h-1 border-b">
