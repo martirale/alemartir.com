@@ -11,12 +11,10 @@ export default async function HomeHero() {
     <>
       <section className="grid grid-cols-1 md:grid-cols-4 w-full border-b">
         <div className="col-span-1 md:border-r order-2 md:order-1">
-          <div className="px-4 pt-4 md:pt-0 text-center md:text-left h-full">
-            <div className="flex flex-col justify-between h-full">
-              <h2 className="self-center my-auto">{title}</h2>
+          <div className="px-4 pt-4 md:pt-0 text-center md:text-left place-content-end h-full">
+            <h2 className="mb-4">{title}</h2>
 
-              <ContentRenderer blocks={quote} />
-            </div>
+            <ContentRenderer blocks={quote} />
           </div>
         </div>
 
