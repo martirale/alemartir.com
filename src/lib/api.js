@@ -37,7 +37,7 @@ export const getGlobal = async () => {
 // ABOUT PAGE
 export const getAbout = async () => {
   const dataAbout = await fetchAPI(
-    `/api/about?fields[0]=title&fields[1]=description&fields[2]=email&fields[3]=phone&populate[profile][fields][0]=url`,
+    `/api/about?fields[0]=title&fields[1]=description&fields[2]=email&fields[3]=phone&fields[4]=short&fields[5]=agencies&populate[profile][fields][0]=url&populate[logos][fields][0]=url&populate[logos][fields][1]=alternativeText`,
     {
       cache: "no-store",
     }
@@ -81,6 +81,7 @@ export const getWorks = async (page = 1, pageSize = 12) => {
   };
 };
 
+// WORK PAGE
 export const getWorkBySlug = async (slug) => {
   const dataWorkBySlug = await fetchAPI(
     `/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=discipline&fields[7]=creative&fields[8]=strategy&fields[9]=lead&fields[10]=design&fields[11]=copywriting&fields[12]=illustration&fields[13]=animation&fields[14]=photo&fields[15]=team&fields[16]=description&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&populate[cover][fields][0]=url`,
@@ -97,6 +98,7 @@ export const getWorkBySlug = async (slug) => {
   return dataWork;
 };
 
+// HOME HERO
 export const getHomeHero = async () => {
   const dataHomeHero = await fetchAPI(
     `/api/home-hero?fields[0]=title&fields[1]=quote&populate[cover][fields][0]=url`,
