@@ -60,7 +60,7 @@ export default async function WorkPage({ params }) {
       campaign,
       agency,
       country,
-      discipline,
+      disciplines,
       creative,
       strategy,
       lead,
@@ -126,9 +126,14 @@ export default async function WorkPage({ params }) {
                     <span className="font-bold">País:</span> {country}
                   </li>
                 )}
-                {discipline && (
+                {disciplines && (
                   <li>
-                    <span className="font-bold">Disciplina:</span> {discipline}
+                    <span className="font-bold">Disciplina:</span>{" "}
+                    {disciplines && disciplines.length > 0
+                      ? disciplines
+                          .map((discipline) => discipline.title)
+                          .join(", ")
+                      : "No especificado"}
                   </li>
                 )}
                 {creative && (

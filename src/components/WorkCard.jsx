@@ -6,7 +6,7 @@ export default function WorkCard({
   title,
   slug,
   client,
-  discipline,
+  disciplines,
   cover,
   isLastInRow,
 }) {
@@ -30,7 +30,11 @@ export default function WorkCard({
           <p>
             <span className="font-bold">{client}</span>
             <br />
-            <span>{discipline}</span>
+            <span>
+              {disciplines && disciplines.length > 0
+                ? disciplines.map((discipline) => discipline.title).join(" • ")
+                : "No especificado"}
+            </span>
           </p>
         </div>
       </Link>

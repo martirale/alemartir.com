@@ -26,7 +26,7 @@ export default async function WorksSection() {
                 title={work.title}
                 slug={work.slug}
                 client={work.client}
-                discipline={work.discipline}
+                disciplines={work.disciplines}
                 cover={work.cover}
                 isLastInRow={(index + 1) % 4 === 0}
               />

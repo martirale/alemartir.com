@@ -70,7 +70,7 @@ export const getTerms = async () => {
 // WORKS INDEX
 export const getWorks = async (page = 1, pageSize = 12) => {
   const dataWorks = await fetchAPI(
-    `/api/works?fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=discipline&populate[cover][fields][0]=url&sort[0]=date:desc&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+    `/api/works?fields[0]=title&fields[1]=slug&fields[2]=client&populate[cover][fields][0]=url&populate[disciplines][fields][0]=title&sort[0]=date:desc&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
     {
       cache: "no-store",
     }
@@ -84,7 +84,7 @@ export const getWorks = async (page = 1, pageSize = 12) => {
 // WORK PAGE
 export const getWorkBySlug = async (slug) => {
   const dataWorkBySlug = await fetchAPI(
-    `/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=discipline&fields[7]=creative&fields[8]=strategy&fields[9]=lead&fields[10]=design&fields[11]=copywriting&fields[12]=illustration&fields[13]=animation&fields[14]=photo&fields[15]=team&fields[16]=description&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&populate[cover][fields][0]=url`,
+    `/api/works?filters[slug]=${slug}&fields[0]=title&fields[1]=slug&fields[2]=client&fields[3]=campaign&fields[4]=agency&fields[5]=country&fields[6]=creative&fields[7]=strategy&fields[8]=lead&fields[9]=design&fields[10]=copywriting&fields[11]=illustration&fields[12]=animation&fields[13]=photo&fields[14]=team&fields[15]=description&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&populate[cover][fields][0]=url&populate[disciplines][fields][0]=title`,
     {
       cache: "no-store",
     }
