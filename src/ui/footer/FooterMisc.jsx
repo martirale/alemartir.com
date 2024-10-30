@@ -8,10 +8,9 @@ export default function FooterMisc() {
   return (
     <div className="border-b md:border-r md:border-b-0 px-4 pt-4 pb-16">
       <div className="flex flex-col">
-        <span className="inline-block">
-          {footerOptions.map((option) => (
+        {footerOptions.map((option) => (
+          <span key={option.id} className="inline-block">
             <Link
-              key={option.id}
               href={option.url}
               target={option.target}
               rel="noopener noreferrer"
@@ -19,8 +18,8 @@ export default function FooterMisc() {
             >
               {option.name}
             </Link>
-          ))}
-        </span>
+          </span>
+        ))}
       </div>
     </div>
   );
