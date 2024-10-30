@@ -14,7 +14,7 @@ export default async function WorksSection() {
       <>
         <section>
           <div className="grid grid-cols-1 w-full p-4 border-b">
-            <div className="text-center md:mt-1">
+            <div className="text-center">
               <h2>Trabajos</h2>
             </div>
           </div>
