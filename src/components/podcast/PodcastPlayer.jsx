@@ -223,7 +223,7 @@ const PodcastPlayer = () => {
               alt={currentEpisode.title}
               width={512}
               height={512}
-              className="w-48 h-48 md:w-96 md:h-96 2xl:w-[512px] 2xl:h-[512px] object-cover mb-8 border border-black"
+              className="w-48 h-48 md:w-96 md:h-96 2xl:w-[512px] 2xl:h-[512px] object-cover mb-8 border border-black yellow-cursor"
             />
             {/* Episode Title */}
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
@@ -288,7 +288,7 @@ const PodcastPlayer = () => {
               {/* Play-Pause */}
               <button
                 onClick={togglePlayPause}
-                className="bg-black text-yellow px-4 py-3.5 rounded-full"
+                className="bg-black text-yellow px-4 py-3.5 rounded-full yellow-cursor"
               >
                 {isPlaying ? (
                   <FontAwesomeIcon
