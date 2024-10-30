@@ -57,7 +57,9 @@ export default function RootLayout({ children }) {
       <body className="bg-yellow text-black custom-vh custom-cursor-active">
         <Header />
 
-        <main className="w-full mx-auto pt-[75px]">{children}</main>
+        <main className="w-full mx-auto pt-[75px] md:pt-[82px]">
+          {children}
+        </main>
 
         <Footer />
 

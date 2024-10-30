@@ -18,7 +18,7 @@ export default async function HomeHero() {
           </div>
         </div>
 
-        <div className="col-span-1 md:col-span-3 h-[480px] md:min-h-[calc(100dvh-75px)] order-1 md:order-2 border-b md:border-b-0">
+        <div className="col-span-1 md:col-span-3 h-[480px] md:min-h-[calc(100dvh-82px)] order-1 md:order-2 border-b md:border-b-0">
           <Image
             src={`${process.env.STRAPI_API_URL}${cover.url}`}
             alt={cover.url}

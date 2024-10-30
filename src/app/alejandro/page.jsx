@@ -84,7 +84,7 @@ export default async function AboutPage() {
           {/* ABOUT CONTENT */}
           <section className="col-span-1">
             <div className="w-full p-4 border-b">
-              <h2 className="text-center md:mt-1">Alejandro Mártir</h2>
+              <h2 className="text-center">Alejandro Mártir</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 border-b">

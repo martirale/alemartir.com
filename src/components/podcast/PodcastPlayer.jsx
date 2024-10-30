@@ -223,7 +223,7 @@ const PodcastPlayer = () => {
               alt={currentEpisode.title}
               width={512}
               height={512}
-              className="w-48 h-48 md:w-96 md:h-96 2xl:w-[512px] 2xl:h-[512px] object-cover mb-8 border border-black yellow-cursor"
+              className="w-48 h-48 md:w-[400px] md:h-[400px] 2xl:w-[550px] 2xl:h-[550px] object-cover mb-8 border border-black yellow-cursor"
             />
             {/* Episode Title */}
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
@@ -335,7 +335,7 @@ const PodcastPlayer = () => {
       </section>
 
       {/* Columna 2: Lista de episodios */}
-      <section className="col-span-1 p-4 md:p-8 items-center max-h-96 md:max-h-[calc(100dvh-75px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+      <section className="col-span-1 p-4 md:p-8 items-center max-h-96 md:max-h-[calc(100dvh-82px)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         <ul>
           {episodes.map((episode, index) => (
             <li
