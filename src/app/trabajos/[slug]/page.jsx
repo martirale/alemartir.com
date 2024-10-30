@@ -82,7 +82,7 @@ export default async function WorkPage({ params }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 w-full md:min-h-[calc(100vh-50%)] border-b">
+        <div className="grid grid-cols-1 md:grid-cols-4 w-full border-b">
           {/* MEDIA CONTENT */}
           <section className="col-span-1 md:col-span-3 border-b md:border-r md:border-b-0">
             {images.map((image) => (

@@ -18,18 +18,18 @@ export default function NotFound() {
     <>
       <h1>404 Not Found</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 w-full md:min-h-[calc(100vh-50%)]">
-        <div className="col-span-1 border-b md:border-r md:border-b-0">
-          <h2 className="text-7xl text-center px-4 py-32">
-            F... <FontAwesomeIcon icon={faGhost} className="w-16 h-16" />
-          </h2>
-        </div>
+      <div className="grid grid-cols-1 w-full md:min-h-[calc(100dvh-360px)]">
+        <h2 className="text-9xl text-center px-4 mt-16 mb-8 2xl:mt-32">
+          F
+          <FontAwesomeIcon
+            icon={faGhost}
+            className="w-24 h-24 align-middle mb-5"
+          />
+        </h2>
 
-        <div className="col-span-1">
-          <p className="text-2xl text-center px-4 py-16 md:py-32 md:mt-7">
-            Lo siento, la página no existe...
-          </p>
-        </div>
+        <p className="text-2xl text-center px-4 mb-16">
+          La página no existe...
+        </p>
       </div>
     </>
   );
