@@ -27,15 +27,22 @@ export default function WorkCard({
         </div>
         <div className="p-4">
           <h3 className="group-hover:underline">{title}</h3>
-          <p>
+          <>
             <span className="font-bold">{client}</span>
             <br />
-            <span>
-              {disciplines && disciplines.length > 0
-                ? disciplines.map((discipline) => discipline.title).join(" • ")
-                : "No especificado"}
-            </span>
-          </p>
+            {disciplines && disciplines.length > 0 ? (
+              <span>
+                {disciplines.map((discipline, index) => (
+                  <React.Fragment key={discipline.id}>
+                    {discipline.title}
+                    {index < disciplines.length - 1 && " • "}
+                  </React.Fragment>
+                ))}
+              </span>
+            ) : (
+              <span>No especificado</span>
+            )}
+          </>
         </div>
       </Link>
     </div>

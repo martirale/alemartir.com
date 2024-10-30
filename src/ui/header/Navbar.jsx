@@ -54,7 +54,7 @@ export default function Navbar() {
 
             return (
               <Link
-                key={option.name}
+                key={option.id}
                 href={option.url}
                 target={option.target}
                 rel="noopener noreferrer"

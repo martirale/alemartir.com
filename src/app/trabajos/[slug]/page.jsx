@@ -126,14 +126,20 @@ export default async function WorkPage({ params }) {
                     <span className="font-bold">País:</span> {country}
                   </li>
                 )}
-                {disciplines && (
+                {disciplines && disciplines.length > 0 ? (
                   <li>
                     <span className="font-bold">Disciplina:</span>{" "}
-                    {disciplines && disciplines.length > 0
-                      ? disciplines
-                          .map((discipline) => discipline.title)
-                          .join(", ")
-                      : "No especificado"}
+                    {disciplines.map((discipline, index) => (
+                      <React.Fragment key={discipline.id}>
+                        {discipline.title}
+                        {index < disciplines.length - 1 && ", "}
+                      </React.Fragment>
+                    ))}
+                  </li>
+                ) : (
+                  <li>
+                    <span className="font-bold">Disciplina:</span> No
+                    especificado
                   </li>
                 )}
                 {creative && (

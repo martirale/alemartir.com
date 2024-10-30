@@ -1,5 +1,6 @@
 export const menuOptions = [
   {
+    id: 1,
     name: "Inicio",
     url: "/",
     showHeader: true,
@@ -8,6 +9,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 2,
     name: "Trabajos",
     url: "/trabajos",
     showHeader: true,
@@ -16,6 +18,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 3,
     name: "Proyectos",
     url: "/proyectos",
     showHeader: true,
@@ -24,6 +27,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 4,
     name: "Podcast",
     url: "/podcast",
     showHeader: true,
@@ -32,6 +36,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 5,
     name: "Ale",
     url: "/alejandro",
     showHeader: true,
@@ -40,6 +45,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 6,
     name: "Blog",
     url: "https://creatyum.media",
     showHeader: true,
@@ -48,6 +54,7 @@ export const menuOptions = [
     target: "_blank",
   },
   {
+    id: 7,
     name: "Privacidad",
     url: "/privacidad",
     showHeader: false,
@@ -56,6 +63,7 @@ export const menuOptions = [
     target: "_self",
   },
   {
+    id: 8,
     name: "Términos de uso",
     url: "/terminos",
     showHeader: false,
