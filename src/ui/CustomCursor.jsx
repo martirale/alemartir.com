@@ -7,6 +7,7 @@ export default function CustomCursor() {
   const [isPointer, setIsPointer] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isYellowZone, setIsYellowZone] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -21,7 +22,21 @@ export default function CustomCursor() {
   }, []);
 
   const updatePosition = useCallback((e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
+    const { clientX, clientY } = e;
+    setPosition({ x: clientX, y: clientY });
+
+    // Verificar si el cursor está dentro de los límites de la ventana
+    const isWithinBounds =
+      clientX >= 0 &&
+      clientX <= window.innerWidth &&
+      clientY >= 0 &&
+      clientY <= window.innerHeight;
+
+    setIsVisible(isWithinBounds);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsVisible(false);
   }, []);
 
   const updateCursorType = useCallback((e) => {
@@ -35,7 +50,6 @@ export default function CustomCursor() {
         'a[href], button, [role="button"], [tabindex]:not([tabindex="-1"])'
       );
 
-    // Verificar si el elemento o alguno de sus padres tiene la clase yellow-cursor
     const hasYellowCursor = target.closest(".yellow-cursor") !== null;
 
     setIsPointer(isInteractive);
@@ -47,14 +61,16 @@ export default function CustomCursor() {
 
     document.addEventListener("mousemove", updatePosition);
     document.addEventListener("mouseover", updateCursorType);
+    document.body.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       document.removeEventListener("mousemove", updatePosition);
       document.removeEventListener("mouseover", updateCursorType);
+      document.body.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [isDesktop, updatePosition, updateCursorType]);
+  }, [isDesktop, updatePosition, updateCursorType, handleMouseLeave]);
 
-  if (!isDesktop) return null;
+  if (!isDesktop || !isVisible) return null;
 
   return (
     <div
