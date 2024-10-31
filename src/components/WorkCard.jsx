@@ -25,24 +25,23 @@ export default function WorkCard({
             className="w-full h-full object-cover yellow-cursor"
           />
         </div>
+        {disciplines && disciplines.length > 0 ? (
+          <div className="absolute top-2 right-2 z-20 flex flex-wrap justify-end gap-1">
+            <span className="bg-yellow border border-black py-1 px-3 text-xs rounded-full inline-block">
+              {disciplines.map((discipline, index) => (
+                <React.Fragment key={discipline.id}>
+                  {discipline.title}
+                  {index < disciplines.length - 1 && " • "}
+                </React.Fragment>
+              ))}
+            </span>
+          </div>
+        ) : (
+          <span>No especificado</span>
+        )}
         <div className="p-4">
+          <p className="mb-2">{client}</p>
           <h3 className="group-hover:underline">{title}</h3>
-          <>
-            <span className="font-bold">{client}</span>
-            <br />
-            {disciplines && disciplines.length > 0 ? (
-              <span>
-                {disciplines.map((discipline, index) => (
-                  <React.Fragment key={discipline.id}>
-                    {discipline.title}
-                    {index < disciplines.length - 1 && " • "}
-                  </React.Fragment>
-                ))}
-              </span>
-            ) : (
-              <span>No especificado</span>
-            )}
-          </>
         </div>
       </Link>
     </div>
