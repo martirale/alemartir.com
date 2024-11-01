@@ -62,28 +62,21 @@ export default async function WorksPage({ searchParams }) {
       <>
         <h1>Trabajos</h1>
 
-        {/* FILTER - Updated for horizontal scrolling on mobile */}
-        <div className="border-b">
-          <div className="max-w-full overflow-x-auto scrollbar-hide">
-            <div className="flex gap-4 p-4 whitespace-nowrap">
-              <Link
-                href="/trabajos?discipline=all"
-                className="font-bold uppercase flex items-center shrink-0"
-              >
-                <FontAwesomeIcon icon={faFilter} className="w-4 h-4 mr-2" />
-                Todos
-              </Link>
-              {disciplines.map((discipline) => (
-                <Link
-                  key={discipline.id}
-                  href={`/trabajos?discipline=${discipline.title}`}
-                  className="font-bold uppercase shrink-0"
-                >
-                  {discipline.title}
-                </Link>
-              ))}
-            </div>
-          </div>
+        {/* FILTER */}
+        <div className="flex gap-4 p-4 border-b justify-center">
+          <Link href="/trabajos?discipline=all" className="font-bold uppercase">
+            <FontAwesomeIcon icon={faFilter} className="w-4 h-4 mr-4" />
+            Todos
+          </Link>
+          {disciplines.map((discipline) => (
+            <Link
+              key={discipline.id}
+              href={`/trabajos?discipline=${discipline.title}`}
+              className="font-bold uppercase"
+            >
+              {discipline.title}
+            </Link>
+          ))}
         </div>
 
         {/* WORKS RENDERED */}
