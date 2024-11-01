@@ -63,7 +63,7 @@ export default async function WorksPage({ searchParams }) {
         <h1>Trabajos</h1>
 
         {/* FILTER */}
-        <div className="flex gap-4 p-4 border-b justify-center">
+        <div className="hidden md:flex md:gap-4 md:p-4 md:border-b md:justify-center">
           <Link href="/trabajos?discipline=all" className="font-bold uppercase">
             <FontAwesomeIcon icon={faFilter} className="w-4 h-4 mr-4" />
             Todos
