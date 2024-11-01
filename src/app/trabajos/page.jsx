@@ -2,7 +2,10 @@ import React from "react";
 import { getGlobal, getWorks, getDisciplines } from "@lib/api";
 import WorkCard from "@components/WorkCard";
 import Pagination from "@components/Pagination";
+import styles from "./trabajos.module.css";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 export async function generateMetadata() {
   try {
@@ -61,19 +64,28 @@ export default async function WorksPage({ searchParams }) {
         <h1>Trabajos</h1>
 
         {/* FILTER */}
-        <div className="flex gap-4 p-4 border-b">
-          <Link href="/trabajos?discipline=all">Todos</Link>
+        <div
+          className={`flex gap-4 p-4 border-b justify-center overflow-x-auto ${styles["overflow-x-auto"]}`}
+        >
+          <Link
+            href="/trabajos?discipline=all"
+            className="font-bold uppercase flex-shrink-0"
+          >
+            <FontAwesomeIcon icon={faFilter} className="w-4 h-4 mr-4" />
+            Todos
+          </Link>
           {disciplines.map((discipline) => (
             <Link
               key={discipline.id}
               href={`/trabajos?discipline=${discipline.title}`}
+              className="font-bold uppercase"
             >
               {discipline.title}
             </Link>
           ))}
         </div>
 
-        {/* Renderizado de trabajos filtrados */}
+        {/* WORKS RENDERED */}
         <div className="overflow-hidden grid grid-cols-1 md:grid-cols-4 w-full">
           {filteredWorks.map((work, index) => (
             <WorkCard
