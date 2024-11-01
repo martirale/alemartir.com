@@ -2,7 +2,6 @@ import React from "react";
 import { getGlobal, getWorks, getDisciplines } from "@lib/api";
 import WorkCard from "@components/WorkCard";
 import Pagination from "@components/Pagination";
-import styles from "./trabajos.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
@@ -64,13 +63,8 @@ export default async function WorksPage({ searchParams }) {
         <h1>Trabajos</h1>
 
         {/* FILTER */}
-        <div
-          className={`flex gap-4 p-4 border-b justify-center overflow-x-auto ${styles["overflow-x-auto"]}`}
-        >
-          <Link
-            href="/trabajos?discipline=all"
-            className="font-bold uppercase flex-shrink-0"
-          >
+        <div className="flex gap-4 p-4 border-b justify-center">
+          <Link href="/trabajos?discipline=all" className="font-bold uppercase">
             <FontAwesomeIcon icon={faFilter} className="w-4 h-4 mr-4" />
             Todos
           </Link>
