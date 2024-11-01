@@ -98,6 +98,14 @@ export const getWorkBySlug = async (slug) => {
   return dataWork;
 };
 
+// DISCIPLINES FILTER
+export const getDisciplines = async () => {
+  const dataDisciplines = await fetchAPI(`/api/disciplines?fields[0]=title`, {
+    cache: "no-store",
+  });
+  return dataDisciplines.data;
+};
+
 // HOME HERO
 export const getHomeHero = async () => {
   const dataHomeHero = await fetchAPI(

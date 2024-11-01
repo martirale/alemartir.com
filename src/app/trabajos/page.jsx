@@ -1,7 +1,8 @@
 import React from "react";
-import { getGlobal, getWorks } from "@lib/api";
+import { getGlobal, getWorks, getDisciplines } from "@lib/api";
 import WorkCard from "@components/WorkCard";
 import Pagination from "@components/Pagination";
+import Link from "next/link";
 
 export async function generateMetadata() {
   try {
@@ -43,20 +44,38 @@ export async function generateMetadata() {
 export default async function WorksPage({ searchParams }) {
   try {
     const currentPage = Number(searchParams.page) || 1;
-    const { data: worksData, meta } = await getWorks();
+    const disciplineParam = searchParams.discipline || "all";
+
+    const { data: worksData, meta } = await getWorks(currentPage);
+    const disciplines = await getDisciplines();
+
+    const filteredWorks =
+      disciplineParam === "all"
+        ? worksData
+        : worksData.filter((work) =>
+            work.disciplines?.some((d) => d.title === disciplineParam)
+          );
 
     return (
       <>
         <h1>Trabajos</h1>
 
-        <div className="grid grid-cols-1 w-full p-4 border-b">
-          <div className="text-center">
-            <h2>Trabajos</h2>
-          </div>
+        {/* FILTER */}
+        <div className="flex gap-4 p-4 border-b">
+          <Link href="/trabajos?discipline=all">Todos</Link>
+          {disciplines.map((discipline) => (
+            <Link
+              key={discipline.id}
+              href={`/trabajos?discipline=${discipline.title}`}
+            >
+              {discipline.title}
+            </Link>
+          ))}
         </div>
 
+        {/* Renderizado de trabajos filtrados */}
         <div className="overflow-hidden grid grid-cols-1 md:grid-cols-4 w-full">
-          {worksData.map((work, index) => (
+          {filteredWorks.map((work, index) => (
             <WorkCard
               key={work.id}
               title={work.title}
