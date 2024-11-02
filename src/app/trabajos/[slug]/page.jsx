@@ -198,7 +198,7 @@ export default async function WorkPage({ params }) {
 
         {/* BACK WORKS */}
         <Link href="/trabajos">
-          <div className="grid grid-cols-1 w-full p-4 bg-black text-yellow hover:underline inverse-select yellow-cursor">
+          <div className="grid grid-cols-1 w-full p-4 hover:underline">
             <div className="text-center">
               <span className="text-xl uppercase">
                 <FontAwesomeIcon icon={faArrowLeft} className="w-5 h-5" /> Otros

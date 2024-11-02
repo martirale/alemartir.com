@@ -8,7 +8,7 @@ const Pagination = ({ currentPage, totalPages }) => {
   const pathname = usePathname();
 
   return (
-    <div className="grid grid-cols-3 yellow-cursor">
+    <div className="grid grid-cols-3 border-t">
       <Link
         href={currentPage > 1 ? `${pathname}?page=${currentPage - 1}` : "#"}
         className={`p-4 ${currentPage <= 1 ? "opacity-50 cursor-not-allowed" : "hover:underline"}`}

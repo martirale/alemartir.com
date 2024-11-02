@@ -35,7 +35,7 @@ export default async function WorksSection() {
         </section>
 
         <Link href="/trabajos">
-          <div className="grid grid-cols-1 w-full p-4 bg-black text-yellow hover:underline inverse-select yellow-cursor">
+          <div className="grid grid-cols-1 w-full p-4 hover:underline">
             <div className="text-center">
               <span className="text-xl uppercase">
                 Todos los trabajos{" "}

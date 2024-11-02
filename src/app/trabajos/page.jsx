@@ -95,7 +95,7 @@ export default async function WorksPage({ searchParams }) {
         </div>
 
         {/* PAGINATION */}
-        <div className="grid grid-cols-1 w-full bg-black text-yellow inverse-select">
+        <div className="grid grid-cols-1 w-full -m-[1px]">
           <div className="text-center">
             <Pagination
               currentPage={meta.pagination.page}
