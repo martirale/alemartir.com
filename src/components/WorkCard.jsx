@@ -39,7 +39,7 @@ export default function WorkCard({
         ) : (
           <span>No especificado</span>
         )}
-        <div className="p-4">
+        <div className="p-4 h-40">
           <p className="mb-2">{client}</p>
           <h3 className="group-hover:underline">{title}</h3>
         </div>
