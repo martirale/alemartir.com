@@ -37,7 +37,7 @@ export const menuOptions = [
   },
   {
     id: 5,
-    name: "Ale",
+    name: "Alejandro",
     url: "/alejandro",
     showHeader: true,
     showFooter: false,
